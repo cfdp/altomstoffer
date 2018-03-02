@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function altomstoffer_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $content = $variables['elements']['content']['#block_content'];
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $content->bundle());
+    $suggestions[] = 'block__bundle__' . $content->bundle() . '__' . $content->id();
+  }
+}
+
+/**
+ * Implements template_preprocess_entity_embed_container().
+ */
+function altomstoffer_preprocess_entity_embed_container(&$variables) {
+  $bundle = $variables['element']['#entity']->bundle();
+  $variables['attributes']['class'][] = 'bundle-' . $bundle;
+}
+
+/**
+ * Implement hook_preprocess_paragraph_HOOK().
+ */
+function altomstoffer_preprocess_paragraph__section(&$variables) {
+
+  $paragraph = $variables['paragraph'];
+  $id = $paragraph->id();
+  $parent_node = $paragraph->getParentEntity();
+  $refs = $parent_node->get('field_sections')->getValue();
+
+  // Find delta value from parent entity, as it it not available
+  // on the paragram item.
+  foreach($refs as $key => $ref) {
+    if($ref['target_id'] == $id) {
+      $index = intval($key) + 1;
+    }
+  }
+  $variables['section_number_display'] = sprintf("%02d", $index);
+  $variables['section_number_id'] = $index;
+}
+
+/**
+ * Implement hook_preprocess_node().
+ */
+function altomstoffer_preprocess_node(&$variables) {
+  $variables['toc'] = views_embed_view('toc', 'toc_float');
+}
+
+/**
+ * Implements hook_theme_suggestions_container_alter().
+ */
+function altomstoffer_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+   $exclude_views = [
+    'toc',
+   ];
+   if (isset($variables['element']['#name']) && in_array($variables['element']['#name'], $exclude_views)) {
+     $suggestions[] = 'container__no_wrapper';
+   }
+}

@@ -1,0 +1,15 @@
+// This file is for general block styling only.
+
+.region-footer-second {
+
+  color: white;
+
+  .block {
+    text-align: center;
+    font-size: $font-size-small;
+
+    p {
+      font-size: $font-size-small;
+    }
+  }
+}

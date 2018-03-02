@@ -1,0 +1,33 @@
+figure.figure-embed {
+
+  margin: 3rem 0;
+  padding: 0;
+  @include clearfix();
+
+  img {
+    float: left;
+  }
+}
+
+figure.figure-embed.full {
+  @include bp-normal {
+    margin-left: -95px;
+    margin-right: -95px;
+  }
+}
+
+figure.figure-embed.float-left {
+  @include bp-normal {
+    float: left;
+    width: calc(50% + 95px);
+    margin: .25rem 2rem 1rem -95px;
+  }
+}
+
+figure.figure-embed.float-right {
+  @include bp-normal {
+    float: right;
+    width: calc(50% + 95px);
+    margin: 0 -95px 1rem 2rem;
+  }
+}

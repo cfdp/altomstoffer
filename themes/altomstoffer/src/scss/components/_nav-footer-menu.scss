@@ -1,0 +1,31 @@
+.navigation.menu--footer {
+
+  color: white;
+
+  ul.menu {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    }
+    li:after {
+      content: "/";
+      margin: 0 1rem;
+    }
+    li:last-child:after {
+      content: "";
+      margin: 0;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-large;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}

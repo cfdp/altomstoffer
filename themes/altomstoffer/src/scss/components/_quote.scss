@@ -1,0 +1,32 @@
+.quote {
+  text-align: center;
+  display: block;
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-red;
+  }
+
+  .quote__text {
+    font-size: $font-size-larger;
+    line-height: $line-height-medium;
+    font-weight: $font-weight-medium;
+    font-style: italic;
+    color: $text-color-dark;
+    margin-bottom: 1.5rem;
+    margin-top: .25rem;
+  }
+  .quote__source {
+    font-size: $font-size-small;
+    font-weight: $font-weight-light;
+  }
+}
+
+.embedded-entity.bundle-quote {
+
+  @include bp-normal {
+    margin-left: -95px;
+    margin-right: -95px;
+  }
+}

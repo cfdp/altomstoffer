@@ -1,0 +1,25 @@
+.node--type-lexicon-article.node--view-mode-full {
+
+  .node__intro {
+    padding-bottom: 6rem;
+  }
+  .node__content {
+    position: relative;
+  }
+
+  .field--name-field-lexicon-aliases {
+
+    font-weight: $font-weight-bold;
+    color: $text-color-dark;
+    margin-bottom: 2rem;
+    font-size: $font-size-large;
+    @include clearfix();
+
+    .field__items {
+
+    }
+    .field__item {
+      display: inline-block;
+    }
+  }
+}

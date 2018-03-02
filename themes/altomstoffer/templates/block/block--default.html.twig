@@ -1,0 +1,8 @@
+<div {{ attributes.addClass('block') }}>
+  {% block content %}
+    <div>
+      if you see this string, something went wrong... Most probably you forgot to override
+      block "content"
+    </div>
+  {% endblock %}
+</div>

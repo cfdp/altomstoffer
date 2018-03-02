@@ -1,0 +1,227 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/**
+ * @file
+ * Provides optimizations for widgets / custom blocks.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function aos_widget_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Media Entity Form (images).
+  if(strpos($form_id, 'media_image_') === 0) {
+    // Remove revisioning information.
+    $form['revision_information']['#access'] = FALSE;
+  }
+
+  // Entity Browser
+  if($form_id == 'entity_browser_widget_entity_browser_form') {
+    $form['widget_selector']['widget']['#title'] = t('Widgets');
+    $form['widget_selector']['widget']['#description'] = t('Create a new widget or choose an existing.');
+    $form['widget_selector']['widget']['#suffix'] = '<br /><hr /><br />';
+  }
+
+  // Entity Embed Dialog.
+  if ($form_id == 'entity_embed_dialog') {
+
+    // Attach custom validate handler.
+    $form['#validate'][] = 'aos_widget_entity_embed_dialog_validate';
+
+    $entity_element = $form_state->get('entity_element');
+    $entity = $form_state->get('entity');
+
+    // Only show aligning for specific display mode.
+    $form['attributes']['data-align']['#states'] = [
+      'visible' => [
+        'select[name="attributes[data-entity-embed-display]"]' => ['value' => 'view_mode:media.float']
+      ]
+    ];
+
+    // When entity exists.
+    if(isset($entity) && $entity->bundle() != 'image_embed') {
+
+      if($entity->bundle() == 'text_button') {
+        // Enable aligning.
+        $form['attributes']['data-align']['#default_value'] = isset($entity_element['data-align']) ? $entity_element['data-align'] : 'left';
+        unset($form['attributes']['data-align']['#options']['center']);
+      }
+      else {
+        // Remove display options and aligning.
+        $form['attributes']['data-entity-embed-display']['#access'] = FALSE;
+        $form['attributes']['data-align']['#access'] = FALSE;
+      }
+    }
+    else if(isset($entity) && $entity->bundle() == 'image_embed'){
+      // Clean up aligning options.
+      $form['attributes']['data-align']['#default_value'] = isset($entity_element['data-align']) ? $entity_element['data-align'] : 'left';
+      unset($form['attributes']['data-align']['#options']['']);
+      unset($form['attributes']['data-align']['#options']['center']);
+    }
+
+    // Always Disable caption field.
+    $form['attributes']['data-caption']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Custom validation handler for entity_embed_dialog form.
+ */
+function aos_widget_entity_embed_dialog_validate(array &$form, FormStateInterface $form_state) {
+
+  $entity_element = $form_state->get('entity_element');
+
+  if($entity_element['data-entity-embed-display'] == 'view_mode:media.full') {
+    $form_state->setValueForElement($form['attributes']['data-align'], '');
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function aos_widget_inline_entity_form_entity_form_alter(&$entity_form, FormStateInterface $form_state) {
+
+  // Remove revision fields from inline entity form.
+  $entity_form['revision_log']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_preprocess_entity_embed_container().
+ */
+function aos_widget_preprocess_entity_embed_container(&$variables) {
+
+  $entity_type = $variables['element']['#context']['data-entity-type'];
+  $entity_uuid = $variables['element']['#context']['data-entity-uuid'];
+  $attributes = $variables['attributes'];
+  $entity_bundle = $variables['element']['#entity']->bundle();
+
+  if($entity_type == 'media' && $entity_bundle == 'image_embed') {
+    if(isset($attributes['data-align'])) {
+      $variables['align_class'] = 'float-' . $attributes['data-align'];
+    }
+    else {
+      $variables['align_class'] = 'full';
+    }
+  }
+
+  if($entity_type == 'block_content') {
+
+    // Create an instance of the block we are rendering.
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $config = [];
+    $block_instance = $block_manager->createInstance($entity_type . ':' . $entity_uuid, $config);
+    $render = $block_instance->build();
+    $uuid = $block_instance->getDerivativeId();
+
+    $block = [
+      '#theme' => 'block',
+      '#attributes' => [],
+      '#configuration' => $block_instance->getConfiguration(),
+      '#plugin_id' => $block_instance->getPluginId(),
+      '#base_plugin_id' => $block_instance->getBaseId(),
+      '#derivative_plugin_id' => $block_instance->getDerivativeId(),
+      '#id' => $uuid,
+      'content' => $block_instance->build(),
+    ];
+
+    // Render the block instance.
+    $renderer = \Drupal::service('renderer');
+    $html = $renderer->render($block);
+
+    $variables['children'] = $html;
+
+    if($entity_bundle == 'text_button') {
+      $variables['align_class'] = '';
+      if(in_array('align-left', $classes)) {
+        $variables['align_class'] = 'text__side text__side--left';
+      }
+      if(in_array('align-right', $classes)) {
+        $variables['align_class'] = 'text__side text__side--right';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function aos_widget_theme($existing, $type, $theme, $path) {
+
+  return [
+    'block__widget' => [
+      'template' => 'block--widget',
+      'base hook' => 'block',
+    ],
+    'entity_embed_container__image' => [
+      'template' => 'entity-embed-container--image',
+    ],
+    'entity_embed_container__video' => [
+      'template' => 'entity-embed-container--video',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function aos_widget_theme_suggestions_entity_embed_container_alter(array &$suggestions, array $variables) {
+
+  $entity_bundle = $variables['element']['#entity']->bundle();
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+
+  // Only provide templates for frontend theme.
+  if($active_theme == 'altomstoffer') {
+    if($entity_bundle == 'image_embed') {
+      $suggestions[] = 'entity_embed_container__image';
+    }
+    if($entity_bundle == 'video') {
+      $suggestions[] = 'entity_embed_container__video';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function aos_widget_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+
+  $bundle = FALSE;
+
+  // Get block bundle.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $content = $variables['elements']['content']['#block_content'];
+    $bundle = $content->bundle();
+  }
+
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+
+  // Don't provide template for frontend theme.
+  if ($bundle && $active_theme != 'altomstoffer') {
+    $suggestions[] = 'block__widget';
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function aos_widget_preprocess_block(&$variables) {
+
+  // Provide variables for widget template.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $content = $variables['elements']['content']['#block_content'];
+
+    $bundle_type_id = $content->getEntityType()->getBundleEntityType();
+    $bundle_label = \Drupal::entityTypeManager()
+      ->getStorage($bundle_type_id)
+      ->load($content->bundle())
+      ->label();
+
+    $variables['bundle'] = $bundle_label;
+    $variables['label'] = $content->label();
+  }
+}

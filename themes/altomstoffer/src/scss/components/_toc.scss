@@ -1,0 +1,123 @@
+.toc {
+
+  background: $color-blue-darkest;
+  color: white;
+  padding: 4rem 4rem 6.5rem;
+  box-sizing: border-box;
+  position: relative;
+
+  h2 {
+    color: white;
+    margin-bottom: 4rem;
+  }
+
+  .toc__item {
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .counter {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .title {
+    display: inline-block;
+    padding-left: 4rem;
+  }
+  a {
+    position: relative;
+    color: white;
+    display: block;
+    text-decoration: none;
+    font-weight: $font-weight-black;
+    line-height: 1.35em;
+    transition: color 250ms;
+
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 4px;
+      background-color: inherit;
+      display: block;
+      position: absolute;
+      left: -4rem;
+      top: .75rem;
+      transition: background-color 250ms;
+    }
+  }
+  .active a {
+    color: $color-blue;
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 4px;
+      background-color: $color-blue;
+      display: block;
+      position: absolute;
+      left: -4rem;
+      top: .75rem;
+    }
+  }
+
+  .toc-to-top {
+    position: absolute;
+    bottom: -4.65rem;
+    left: 50%;
+    margin-left: -5rem;
+    width: 10rem;
+
+    a {
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+    svg {
+      fill: white;
+      width: 2rem;
+      height: 2rem;
+      display: block;
+    }
+    div.svg {
+      display: block;
+      background: $color-blue;
+      width: 2rem;
+      height: 2rem;
+      padding: 1rem;
+      border-radius: 3rem;
+      margin: 0 auto 3px;
+      border: 4px solid white;
+    }
+    div.text {
+      display: block;
+      font-weight: $font-weight-light;
+      text-transform: uppercase;
+      color: $text-color-dark;
+      font-size: $font-size-small;
+    }
+  }
+}
+
+.toc--float {
+
+  display: none;
+
+  @include bp-normal {
+
+  }
+  @include bp-wide {
+    display: block;
+    position: sticky;
+    top: 3rem;
+    right: 1rem;
+    z-index: 100;
+    float: right;
+    margin-top: 6rem;
+    width: 36rem;
+  }
+}

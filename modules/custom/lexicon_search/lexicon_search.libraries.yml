@@ -1,0 +1,3 @@
+lexicon_search:
+  js:
+    js/dist/index.bundle.js: {}

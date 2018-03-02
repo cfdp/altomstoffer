@@ -1,0 +1,62 @@
+body:not(.page-node-type-lexicon-article) {
+
+  .layout-content {
+
+    padding: 5rem 3rem;
+
+    @include bp-normal {
+      max-width: 760px;
+      padding: 5rem 0rem;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    @include bp-wide {
+      max-width: 1140px;
+    }
+
+    .region-content {
+      grid-column-start: 3;
+      grid-column-end: 11;
+    }
+  }
+}
+
+.page-node-type-lexicon-article {
+
+  .region-content {
+    padding: 5rem 0 0;
+  }
+
+  #block-altomstoffer-page-title,
+  #block-altomstoffer-local-tasks,
+  .messages,
+  .node__intro {
+    box-sizing: border-box;
+
+    @include bp-normal {
+      width: 570px;
+      margin: auto;
+    }
+    @include bp-wide {
+      position: relative;
+      left: -120px;
+    }
+  }
+
+}
+
+.layout-post-content {
+
+  background: $color-grey-light;
+  padding: 5rem 0;
+
+  .region-post-content {
+    @include bp-normal {
+      max-width: 570px;
+      margin: auto;
+    }
+  }
+
+}

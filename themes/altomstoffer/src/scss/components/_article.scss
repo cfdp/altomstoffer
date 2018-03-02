@@ -1,0 +1,64 @@
+.node--type-page.node--view-mode-full,
+.node--type-article.node--view-mode-full {
+
+  .node__content {
+    > .field--name-body {
+
+      @include bp-normal {
+        width: 570px;
+        margin: auto;
+      }
+    }
+    > .field--name-field-article-author {
+      text-transform: uppercase;
+      font-weight: $font-weight-light;
+      margin-bottom: 3rem;
+    }
+
+    > .field--name-field-intro {
+      font-weight: $font-weight-bold;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: $text-color-dark;
+    }
+  }
+}
+
+.node--type-article.node--view-mode-teaser {
+
+  @include clearfix();
+
+  a {
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .field--name-field-hero {
+    float: left;
+    width: 100px;
+    margin-right: 1.5rem;
+
+    img {
+      display: block;
+    }
+  }
+  .field--name-field-article-author {
+    font-size: 1.3rem;
+    line-height: $line-height-small;
+    font-weight: $font-weight-light;
+    color: $text-color;
+    margin-bottom: .75rem;
+  }
+  .title {
+    font-size: 1.8rem;
+    font-weight: $font-weight-bold;
+    color: white;
+    background: $color-red;
+    box-shadow: 4px 0 0 0 $color-red, -4px 0 0 0 $color-red;
+    display: inline;
+    line-height: $line-height-small;
+  }
+}

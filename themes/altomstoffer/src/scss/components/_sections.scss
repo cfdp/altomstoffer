@@ -1,0 +1,54 @@
+.sections {
+
+  .sections__item {
+
+    padding: 6rem 3rem;
+
+    .section__number {
+      display: none;
+
+      @include bp-normal {
+        display: block;
+        font-size: 15rem;
+        position: absolute;
+        top: -1.5rem;
+        left: -19rem;
+        line-height: 1;
+        width: 16rem;
+        text-align: right;
+        letter-spacing: -1rem;
+        font-weight: $font-weight-light;
+        opacity: .2;
+      }
+    }
+
+    .section__title {
+      margin: 0 0 3rem;
+    }
+
+    .section__body {
+
+    }
+
+    &:nth-child(even) {
+      background: white;
+    }
+    &:nth-child(odd) {
+      background: $color-grey-light;
+    }
+  }
+
+  .section__inner {
+    position: relative;
+
+    @include bp-normal {
+      width: 570px;
+      margin: auto;
+      position: relative;
+    }
+    @include bp-wide {
+      left: -120px;
+    }
+  }
+
+}

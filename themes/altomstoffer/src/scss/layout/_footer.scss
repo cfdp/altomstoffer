@@ -1,0 +1,24 @@
+.footer-container {
+
+  .layout-footer-first {
+    padding: 5rem 0;
+    background: $color-blue-darkest;
+  }
+
+  .layout-footer-second {
+    padding: 2.5rem 0;
+    background: #19242c;
+  }
+
+  .region-footer-first,
+  .region-footer-second {
+    margin: auto;
+
+    @include bp-normal {
+      max-width: 960px;
+    }
+    @include bp-wide {
+      max-width: 1140px;
+    }
+  }
+}

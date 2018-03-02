@@ -1,0 +1,12 @@
+{% extends "block--default.html.twig" %}
+{% block content %}
+  <blockquote class="quote">
+    <svg class='icon icon-quotes-right'>
+      <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#quotes-right' />";
+    </svg>
+    <div class="quote__text">
+      {{content.field_quote}}
+    </div>
+    <div class="quote__source">{{content.field_quote_source}}</div>
+  </blockqupte>
+{% endblock %}

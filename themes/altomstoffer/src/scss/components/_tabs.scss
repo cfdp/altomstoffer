@@ -1,0 +1,36 @@
+/* System Tabs */
+.tabs {
+
+	margin: 2rem 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $text-color-dark;
+
+    li {
+	    display: block;
+	    margin: 0;
+
+      @include bp-normal {
+	      display: inline-block;
+	      margin: 0 5px;
+      }
+
+      a {
+        color: $text-color-dark;
+        display: block;
+        padding: 0.5em 1em;
+        border: 1px solid $text-color-dark;
+        border-bottom: none;
+        line-height: 1;
+        text-decoration: none;
+        transition: all .5s;
+      }
+      a.is-active {
+        background: $text-color-dark;
+        color: white;
+      }
+    }
+  }
+}

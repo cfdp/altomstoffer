@@ -1,0 +1,19 @@
+.header-container {
+
+  background: $color-blue-darkest;
+  padding: 5rem 0;
+
+  @include bp-normal {
+  }
+
+  .region-header {
+    margin: auto;
+
+    @include bp-normal {
+      max-width: 960px;
+    }
+    @include bp-normal {
+      max-width: 1140px;
+    }
+  }
+}
