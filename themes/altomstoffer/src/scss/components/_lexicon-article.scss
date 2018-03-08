@@ -22,4 +22,12 @@
       display: inline-block;
     }
   }
+
+  .embedded-entity.bundle-quote,
+  figure.figure-embed.full {
+    @include bp-wide {
+      margin-left: -180px;
+      margin-right: 0;
+    }
+  }
 }

@@ -1,0 +1,11 @@
+.hero {
+  @include clearfix();
+}
+
+.paragraph--type--hero {
+
+  img {
+    float: left;
+    width: 100%;
+  }
+}

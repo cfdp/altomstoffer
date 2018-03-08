@@ -1,9 +1,12 @@
 <?php
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() for form templates.
- * @param array $suggestions
- * @param array $variables
+ * @file
+ * Hooks and alterations to the theme.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
 function altomstoffer_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   // Block suggestions for custom block bundles.
@@ -23,7 +26,7 @@ function altomstoffer_preprocess_entity_embed_container(&$variables) {
 }
 
 /**
- * Implement hook_preprocess_paragraph_HOOK().
+ * Implements hook_preprocess_paragraph_HOOK().
  */
 function altomstoffer_preprocess_paragraph__section(&$variables) {
 
@@ -34,8 +37,8 @@ function altomstoffer_preprocess_paragraph__section(&$variables) {
 
   // Find delta value from parent entity, as it it not available
   // on the paragram item.
-  foreach($refs as $key => $ref) {
-    if($ref['target_id'] == $id) {
+  foreach ($refs as $key => $ref) {
+    if ($ref['target_id'] == $id) {
       $index = intval($key) + 1;
     }
   }
@@ -44,7 +47,7 @@ function altomstoffer_preprocess_paragraph__section(&$variables) {
 }
 
 /**
- * Implement hook_preprocess_node().
+ * Implements hook_preprocess_node().
  */
 function altomstoffer_preprocess_node(&$variables) {
   $variables['toc'] = views_embed_view('toc', 'toc_float');
@@ -54,10 +57,11 @@ function altomstoffer_preprocess_node(&$variables) {
  * Implements hook_theme_suggestions_container_alter().
  */
 function altomstoffer_theme_suggestions_container_alter(array &$suggestions, array $variables) {
-   $exclude_views = [
-    'toc',
-   ];
-   if (isset($variables['element']['#name']) && in_array($variables['element']['#name'], $exclude_views)) {
-     $suggestions[] = 'container__no_wrapper';
-   }
+  $exclude_views = [
+    'toc', 
+    'hero'
+  ];
+  if (isset($variables['element']['#name']) && in_array($variables['element']['#name'], $exclude_views)) {
+    $suggestions[] = 'container__no_wrapper';
+  }
 }

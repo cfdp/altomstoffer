@@ -40,31 +40,30 @@ gulp.task('sass', function () {
     errorHandler: onError
   }))
   .pipe(sass())
-  .pipe(gulp.dest('css'))
-  .pipe(browserSync.reload({ stream:true }));
+  .pipe(gulp.dest('css'));
 });
 
 /**
  * @task svg-sprites
  */
 gulp.task('svg-sprites', function() {
-		return gulp.src("src/svg/*.svg")
-				.pipe(svgSprite({
-					mode: "symbols",
-					preview: true
-				}))
-				.pipe(gulp.dest("assets"))
-				.pipe(imagemin({
-						svgoPlugins: [
-							{cleanupIDs: false},
-							{removeUselessDefs: false},
-              {removeTitle: true}
-						]
-				}))
-				.pipe( rename( {
-					suffix: '.min'
-				} ) )
-				.pipe(gulp.dest("assets"));
+  return gulp.src("src/svg/*.svg")
+    .pipe(svgSprite({
+      mode: "symbols",
+      preview: true
+    }))
+    .pipe(gulp.dest("assets"))
+    .pipe(imagemin({
+      svgoPlugins: [
+        {cleanupIDs: false},
+        {removeUselessDefs: false},
+        {removeTitle: true}
+      ]
+    }))
+    .pipe( rename( {
+      suffix: '.min'
+    } ) )
+    .pipe(gulp.dest("assets"));
 });
 
 /**
