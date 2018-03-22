@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
-import Drug from './Drug';
+import Alphabet from './Alphabet';
 import { getDrugs } from '../utils/api.js';
 
 class DrugList extends Component {
@@ -19,7 +19,6 @@ class DrugList extends Component {
   }
 
   async componentWillMount() {
-
     const drugs = await getDrugs();
     const allDrugs = this.extractAliases(drugs);
     const drugsGrouped = this.groupDrugs(allDrugs);
@@ -100,6 +99,7 @@ class DrugList extends Component {
         <div className="lexicon-search">
           <input type="text" className="lexicon-search__input" placeholder="Search" onChange={this.filterDrugs} />
         </div>
+        <Alphabet />
         {
           Object.keys(currentDrugs).map((letter) => {
             return (

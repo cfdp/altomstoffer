@@ -20,7 +20,7 @@ function aos_widget_form_alter(&$form, FormStateInterface $form_state, $form_id)
     $form['revision_information']['#access'] = FALSE;
   }
 
-  // Entity Browser
+  // Entity Browser.
   if($form_id == 'entity_browser_widget_entity_browser_form') {
     $form['widget_selector']['widget']['#title'] = t('Widgets');
     $form['widget_selector']['widget']['#description'] = t('Create a new widget or choose an existing.');

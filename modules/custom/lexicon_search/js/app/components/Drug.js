@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Drug extends Component {
   render() {
-    <div className="drug">I am a drugs</div>
+    <div className="drug">I am a drug</div>
   }
 }
 
