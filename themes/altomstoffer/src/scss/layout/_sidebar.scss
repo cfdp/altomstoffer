@@ -1,0 +1,36 @@
+.layout-sidebar {
+  background-color: $color-red;
+  background: linear-gradient($color-red 60%, $color-red-dark);
+  color: white;
+  width: 60rem;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: -60rem;
+  padding: 15rem 7.5rem;
+  box-sizing: border-box;
+  transition: right 300ms ease-in-out;
+
+  &.active {
+    right: 0;
+  }
+}
+
+.overlay-sidebar {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0,0,0,0);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+
+  &.active {
+    background: rgba(0,0,0,0.6);
+    visibility: visible;
+  }
+}

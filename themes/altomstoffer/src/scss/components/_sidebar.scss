@@ -1,0 +1,19 @@
+.region-sidebar {
+
+  .icon-close {
+    fill: white;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 6rem;
+    right: 7.5rem;
+  }
+
+  nav {
+    margin-bottom: 10rem;
+  }
+
+  .block:not(nav) {
+    margin-bottom: 5rem;
+  }
+}

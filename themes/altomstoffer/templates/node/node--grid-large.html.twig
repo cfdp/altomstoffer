@@ -1,0 +1,32 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<a href="{{ url }}">
+  <article{{ attributes.addClass(classes) }}>
+
+    <div class="grid-item__background">
+      {% if content.field_hero %}
+        {{ content.field_hero }}
+      {% endif %}
+      <canvas width="3" height="2"></canvas>
+    </div>
+
+    <div{{ content_attributes.addClass('grid-item__content', 'text') }}>
+      <div class="bundle">{{ node.type.entity.label }}</div>  
+      <h2>{{ label }}</h2>
+      {{ content|without('field_hero') }}
+      <svg class='icon icon-arrow-right'>
+        <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#arrow-right' />
+      </svg>
+    </div>
+
+  </article>
+</a>

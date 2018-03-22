@@ -1,4 +1,3 @@
-
 (function ($, Drupal) {
 
   Drupal.behaviors.signUpHandler = {

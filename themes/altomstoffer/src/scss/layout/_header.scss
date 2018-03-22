@@ -4,35 +4,32 @@
   position: relative;
   overflow: hidden;
 
-  canvas {
-    width: 100%;
-    max-height: 60rem;
-    float: left;
-  }
-
   .region-header {
-    position: absolute;
-    width: 100%;
-    z-index: 3;
-    top: 5rem;
-    left: 0;
-    right: 0;
-    padding: 0 3rem;
-    box-sizing: border-box;
+    display: none;
 
     @include bp-normal {
+      display: grid;
+      display: -ms-grid;
+      grid-template-columns: 1fr 1fr;
+      -ms-grid-columns: 1fr 1fr;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+      top: 5rem;
+      left: 0;
+      right: 0;
+      padding: 0 3rem;
+      box-sizing: border-box;
       margin: 0 auto;
       max-width: 960px;
+      padding: 0;
     }
-    @include bp-normal {
+    @include bp-wide {
       max-width: 1140px;
     }
   }
 
   .region-hero {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     z-index: 2;
     box-sizing: border-box;
   }

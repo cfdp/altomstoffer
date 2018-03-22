@@ -47,11 +47,9 @@
   <header role="banner" class="header-container">
     {{ page.header }}
     {{ page.hero }}
-    <canvas width="2" height="1"></canvas>
   </header>
 
   {{ page.highlighted }}
-
   {{ page.help }}
 
   <main role="main" class="main-container">
@@ -83,3 +81,10 @@
   </footer>
 
 </div>{# /.layout-container #}
+
+{% if page.sidebar %}
+  <div class="layout-sidebar">
+    {{ page.sidebar }}
+  </div>{# /.layout-sidebar #}
+  <div class="overlay-sidebar"></div>
+{% endif %}

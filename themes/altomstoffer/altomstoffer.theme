@@ -50,18 +50,30 @@ function altomstoffer_preprocess_paragraph__section(&$variables) {
  * Implements hook_preprocess_node().
  */
 function altomstoffer_preprocess_node(&$variables) {
-  $variables['toc'] = views_embed_view('toc', 'toc_float');
+
+  if ($variables['node']->getType() == 'lexicon_article') {
+    $variables['toc'] = views_embed_view('toc', 'toc_float');
+  }
+  elseif ($variables['node']->getType() == 'landing_page') {
+    $variables['frontpage_articles_large'] = views_embed_view('frontpage_articles', 'block_grid_large');
+    $variables['frontpage_articles_small'] = views_embed_view('frontpage_articles', 'block_grid_small');
+    $variables['frontpage_videos'] = views_embed_view('frontpage_videos', 'block_grid_small');
+    $variables['frontpage_lexicon_articles'] = views_embed_view('frontpage_lexicon_articles', 'block_grid_small');
+  }
 }
 
 /**
  * Implements hook_theme_suggestions_container_alter().
  */
 function altomstoffer_theme_suggestions_container_alter(array &$suggestions, array $variables) {
-  $exclude_views = [
-    'toc', 
-    'hero'
+  $no_wrapper_views = [
+    'toc',
+    'hero',
+    'frontpage_articles',
+    'frontpage_lexicon_articles',
+    'frontpage_videos',
   ];
-  if (isset($variables['element']['#name']) && in_array($variables['element']['#name'], $exclude_views)) {
+  if (isset($variables['element']['#name']) && in_array($variables['element']['#name'], $no_wrapper_views)) {
     $suggestions[] = 'container__no_wrapper';
   }
 }

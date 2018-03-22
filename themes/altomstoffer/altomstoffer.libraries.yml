@@ -6,6 +6,13 @@ global-styling:
   js:
     js/libraries/scrollspy.js: {}
     js/toc.js: {}
+    js/video.js: {}
+    js/sidebar.js: {}
   dependencies:
     - core/drupal
     - core/jquery
+
+masonry:
+  version: VERSION
+  js:
+    bower_components/masonry-layout/dist/masonry.pkgd.js: {}

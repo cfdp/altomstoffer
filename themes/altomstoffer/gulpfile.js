@@ -6,7 +6,8 @@ var gulp        = require('gulp'),
     plumber     = require('gulp-plumber'),
     rename      = require('gulp-rename'),
     svgSprite   = require('gulp-svg-sprites'),
-    imagemin    = require('gulp-imagemin');
+    imagemin    = require('gulp-imagemin'),
+    notify      = require('gulp-notify');
 
 
 /**
@@ -14,11 +15,13 @@ var gulp        = require('gulp'),
  */
 gulp.task('serve', ['sass'], function() {
   browserSync.init({
+    open: false,
     proxy: "altomstoffer.docker.localhost"
   });
 
   gulp.watch("src/scss/**", ['sass']);
   gulp.watch('src/svg/*.svg', ['svg-sprites']);
+  gulp.watch("templates/**/*.html.twig").on('change', browserSync.reload);
 });
 
 /**
@@ -75,7 +78,12 @@ gulp.task('default', ['serve']);
 /**
  * Error Handler
  */
-function onError(err) {
-  console.log(err);
+function onError(error) {
+  notify.onError({
+    title: "Gulp",
+    subtitle: 'Error compiling SASS',
+    message: error.message,
+    sound: false
+  })(error);
   this.emit('end');
 }

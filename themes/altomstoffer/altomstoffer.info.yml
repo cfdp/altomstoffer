@@ -6,6 +6,7 @@ package: Custom
 core: 8.x
 screenshot: screenshot.png
 libraries:
+  - altomstoffer/masonry
   - altomstoffer/global-styling
 ckeditor_stylesheets:
   - css/wysiwyg.css
@@ -22,7 +23,7 @@ regions:
   help: Help
   breadcrumb: Breadcrumb
   content: Content
-  content_sidebar: 'Content sidebar'
   post_content: 'Post content'
   footer_first: 'Footer first'
   footer_second: 'Footer second'
+  sidebar: 'Sidebar'
