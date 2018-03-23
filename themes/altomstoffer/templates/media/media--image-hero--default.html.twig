@@ -1,0 +1,8 @@
+<div class="hero-progressive-image">
+  {% set image = content.field_media_image.0 %}
+  {% set image = image|merge({'#image_style': 'hero_64x27'}) %}
+  {{ image }}
+  {{ content.field_media_image.0 }}
+  <canvas width="1600" height="675"></canvas>
+  <noscript>  {{ content.field_media_image.0 }}</noscript>
+</div>

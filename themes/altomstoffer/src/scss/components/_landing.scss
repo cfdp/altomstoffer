@@ -132,13 +132,25 @@
       word-break: break-all;
       line-height: $line-height-base;
       text-shadow: 0 0 1.2rem rgba(0,0,0,0.35);
+      display: block;
+      @include clearfix();
+
+      .field__item {
+        display: inline-block;
+      }
+      .field__item:after {
+        content: ",";
+      }
+      .field__item:last-child:after {
+        content: "";
+      }
     }
   }
 
   .bundle-video {
 
     .grid-item__background {
-      background: $color-red;
+      background: $color-red-light;
     }
     img {
       opacity: 0.15;

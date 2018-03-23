@@ -20,6 +20,20 @@
       margin-bottom: 3rem;
       color: $text-color-dark;
     }
+
+    > .field--name-field-view {
+      margin-top: 3rem;
+      
+      @include bp-normal {
+        margin-left: -95px;
+        margin-right: -95px;
+      }      
+
+      @include bp-wide {
+        margin-left: -285px;
+        margin-right: -285px;
+      }
+    }
   }
 }
 

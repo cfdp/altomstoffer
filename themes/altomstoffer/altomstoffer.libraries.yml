@@ -4,11 +4,12 @@ global-styling:
     theme:
       css/styles.css: {}
   js:
+    js/progressive-image.js: {}
     js/libraries/scrollspy.js: {}
     js/toc.js: {}
     js/video.js: {}
     js/sidebar.js: {}
-  dependencies:
+    dependencies:
     - core/drupal
     - core/jquery
 

@@ -106,7 +106,7 @@ blockquote {
 
 .text a,
 .cke_editable a {
-  color: #c93b3b;
+  color: #e82c2c;
   text-decoration: none; }
 
 .text a:hover,
@@ -191,11 +191,11 @@ input[type=button] {
   appearance: none; }
 
 ::-moz-selection {
-  background-color: #c93b3b;
+  background-color: #e82c2c;
   color: white; }
 
 ::selection {
-  background-color: #c93b3b;
+  background-color: #e82c2c;
   color: white; }
 
 /* Aligning */

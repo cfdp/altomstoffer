@@ -11,6 +11,11 @@
     font-size: 2.6rem;
     margin-bottom: 4rem;
     transition: margin 100ms ease-in-out;
+    text-align: center;
+
+    @include bp-normal {
+      text-align: left;
+    }
 
     &:hover {
       margin-left: 5px;

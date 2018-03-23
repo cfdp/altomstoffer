@@ -6,7 +6,6 @@ package: Custom
 core: 8.x
 screenshot: screenshot.png
 libraries:
-  - altomstoffer/masonry
   - altomstoffer/global-styling
 ckeditor_stylesheets:
   - css/wysiwyg.css
@@ -16,6 +15,7 @@ stylesheets-remove:
   - core/modules/views/css/views.module.css
   - core/themes/classy/css/components/tabs.css
   - core/themes/classy/css/components/menu.css
+  - modules/contrib/masonry/css/masonry.css
 regions:
   header: Header
   hero: Hero

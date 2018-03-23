@@ -48,8 +48,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
+      {{ content.field_hero_image }}
     {% endblock %}
-    <canvas width="1600" height="675"></canvas>
   </div>
 {% endblock paragraph %}

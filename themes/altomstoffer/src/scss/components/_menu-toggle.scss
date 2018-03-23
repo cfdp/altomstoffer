@@ -1,19 +1,39 @@
+.site-logo {
+  display: inline-block;
+  
+  img {
+    height: 3.5rem;
+  }
+}
 .menu-toggle {
   text-align: right;
-  margin-top: 1rem;
+
+  @include bp-normal {
+    margin-top: 1rem;
+  }
 
   a {
     color: white;
     text-decoration: none;
-    line-height: 3.25rem;
     text-transform: uppercase;
+    display: inline-block;
+
+    @include bp-normal {
+      line-height: 3.25rem;
+    }
 
     svg {
-      fill: white;
-      width: 3rem;
-      height: 3rem;
+      fill: $color-red;
       float: right;
-      margin-left: 0.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      @include bp-normal {
+        margin-left: 0.5rem;
+        fill: white;
+        width: 3rem;
+        height: 3rem;
+      }
     }
   }
 }

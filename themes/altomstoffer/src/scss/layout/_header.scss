@@ -1,17 +1,20 @@
 .header-container {
-
-  background: $color-blue-darkest;
+  background: white;
   position: relative;
   overflow: hidden;
 
-  .region-header {
-    display: none;
+  @include bp-normal {
+    background: $color-blue-darkest; 
+  }
 
-    @include bp-normal {
+  .region-header {
+      padding: 1.5rem;
       display: grid;
       display: -ms-grid;
       grid-template-columns: 1fr 1fr;
       -ms-grid-columns: 1fr 1fr;
+
+    @include bp-normal {
       position: absolute;
       width: 100%;
       z-index: 10;
@@ -32,5 +35,6 @@
   .region-hero {
     z-index: 2;
     box-sizing: border-box;
+    overflow: hidden;
   }
 }
