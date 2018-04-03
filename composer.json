@@ -28,7 +28,8 @@
         "drupal/viewsreference": "2.0-alpha4",
         "drupal/masonry": "^1.0@RC",
         "drupal/masonry_views": "^1.0@RC",
-        "drupal-composer/drupal-scaffold": "dev-master"
+        "drupal-composer/drupal-scaffold": "dev-master",
+        "drupal/metatag": "^1.5"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
