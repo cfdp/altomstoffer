@@ -27,7 +27,8 @@
         "drupal/core": "8.5",
         "drupal/viewsreference": "2.0-alpha4",
         "drupal/masonry": "^1.0@RC",
-        "drupal/masonry_views": "^1.0@RC"
+        "drupal/masonry_views": "^1.0@RC",
+        "drupal-composer/drupal-scaffold": "dev-master"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -80,7 +81,8 @@
           "Drupal\\Core\\Composer\\Composer::ensureHtaccess"
         ],
         "post-package-install": "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup",
-        "post-package-update": "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup"
+        "post-package-update": "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup",
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     },
     "repositories": [
         {

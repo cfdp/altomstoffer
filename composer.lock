@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a35e598bd6a591ba7f47f43e81acff6",
+    "content-hash": "a9f77d2ef42bbf5c69cda732c15cde1b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -954,6 +954,48 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "drupal-composer/drupal-scaffold",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal-composer/drupal-scaffold.git",
+                "reference": "2b06b73f8496541fb02c91680e850e2e4ad423f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/2b06b73f8496541fb02c91680e850e2e4ad423f3",
+                "reference": "2b06b73f8496541fb02c91680e850e2e4ad423f3",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0.0",
+                "composer/semver": "^1.4",
+                "php": ">=5.4.5"
+            },
+            "require-dev": {
+                "composer/composer": "dev-master",
+                "phpunit/phpunit": "^4.4.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "DrupalComposer\\DrupalScaffold\\Plugin",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DrupalComposer\\DrupalScaffold\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
+            "time": "2018-01-21T21:06:09+00:00"
         },
         {
             "name": "drupal/admin_toolbar",
@@ -8308,6 +8350,7 @@
         "drupal/libraries": 15,
         "drupal/masonry": 5,
         "drupal/masonry_views": 5,
+        "drupal-composer/drupal-scaffold": 20,
         "drupal/browsersync": 10,
         "behat/mink": 20,
         "behat/mink-selenium2-driver": 20
