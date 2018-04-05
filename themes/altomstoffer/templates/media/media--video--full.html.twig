@@ -31,31 +31,13 @@
  * @ingroup themeable
  */
 #}
-
-<a data-colorbox-inline=".overlay__item.media-{{ media.id }}" data-width="720">
-  <div{{ attributes }}>
-
-    <div class="grid-item__background">
-      {% if content.field_video_image %}
-        {{ content.field_video_image }}
-      {% endif %}
-      {{ content.field_video_duration }}
-    </div>
-
-    <div class="grid-item__content text">
-      <div class="bundle">
-        <svg class='icon icon-play'>
-          <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#play' />
-        </svg>
-        <span>Video</span>
-      </div>
-      <h2>{{ content.name }}</h2>
-    </div>
-
+<div{{ attributes }}>
+  <div class="overlay-video">
+    {{ content.field_video }}
+    <canvas width="16" height="9"></canvas>
   </div>
-</a>
-
-<div class="grid-item__description">
-  {{ content.field_video_description }}
-  {{ content.field_tags }}
+  <div class="overlay-content">
+    <div class="overlay-label">Video</div>
+    {{ content|without('field_video') }}
+  </div>
 </div>

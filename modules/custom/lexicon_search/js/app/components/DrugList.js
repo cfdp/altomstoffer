@@ -103,20 +103,20 @@ class DrugList extends Component {
         {
           Object.keys(currentDrugs).map((letter) => {
             return (
-              <div className="lexicon-group" key={ letter }>
-              <div className="lexicon-group__number">{ letter }</div>
-              <div className="lexicon-list">
-                {
-                  currentDrugs[letter].map(({nid, title, type}) => {
-                    return (
-                      <a href={ "/node/" + nid }><div className={"lexicon-list__item" + " type-" + type}>
-                        <span className="lexicon-list__type">{ type }</span>
-                        <span className="lexicon-list__title">{ title }</span>
-                      </div></a>
-                    )
-                  })
-                }
-              </div>
+              <div className="lexicon-group" key={letter} id={`letter-${letter}`}>
+                <div className="lexicon-group__number">{ letter }</div>
+                <div className="lexicon-list">
+                  {
+                    currentDrugs[letter].map(({nid, title, type}) => {
+                      return (
+                        <a href={ "/node/" + nid }><div className={"lexicon-list__item" + " type-" + type}>
+                          <span className="lexicon-list__type">{ type }</span>
+                          <span className="lexicon-list__title">{ title }</span>
+                        </div></a>
+                      )
+                    })
+                  }
+                </div>
               </div>
             )
           })

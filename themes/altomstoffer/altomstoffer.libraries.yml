@@ -4,7 +4,9 @@ global-styling:
     theme:
       css/styles.css: {}
   js:
+    bower_components/svgxuse/svgxuse.js: {}
     js/progressive-image.js: {}
+    js/colorboxConfig.js: {}
     js/libraries/scrollspy.js: {}
     js/toc.js: {}
     js/video.js: {}
@@ -12,8 +14,3 @@ global-styling:
     dependencies:
     - core/drupal
     - core/jquery
-
-masonry:
-  version: VERSION
-  js:
-    bower_components/masonry-layout/dist/masonry.pkgd.js: {}

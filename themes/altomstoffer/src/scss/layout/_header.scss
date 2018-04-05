@@ -8,11 +8,11 @@
   }
 
   .region-header {
-      padding: 1.5rem;
-      display: grid;
-      display: -ms-grid;
-      grid-template-columns: 1fr 1fr;
-      -ms-grid-columns: 1fr 1fr;
+    padding: 1.5rem;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
 
     @include bp-normal {
       position: absolute;
@@ -26,6 +26,13 @@
       margin: 0 auto;
       max-width: 960px;
       padding: 0;
+
+      > .block:nth-child(1) {
+        -ms-grid-column: 1;
+      }
+      > .block:nth-child(2) {
+        -ms-grid-column: 2;
+      }
     }
     @include bp-wide {
       max-width: 1140px;

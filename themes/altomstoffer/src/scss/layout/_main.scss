@@ -6,7 +6,9 @@
     padding: 5rem 0;
     margin: 0 auto 0;
     display: grid;
+    display: -ms-grid;
     grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 
   @include bp-wide {
@@ -17,6 +19,7 @@
     @include bp-normal {
       grid-column-start: 1;
       grid-column-end: -1;
+      -ms-grid-column-span: 12;
     }
   }
 }
@@ -46,6 +49,7 @@
     @include bp-normal {
       grid-column-start: 1;
       grid-column-end: -1;
+      -ms-grid-column-span: 12;
       background: white;
       margin-top: -17rem;
       position: relative;
@@ -55,6 +59,8 @@
     @include bp-wide {
       grid-column-start: 3;
       grid-column-end: 11;
+      -ms-grid-column-span: 8;
+      -ms-grid-column: 3;
     }
   }
 }

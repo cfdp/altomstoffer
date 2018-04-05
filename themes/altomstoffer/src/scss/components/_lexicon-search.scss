@@ -20,9 +20,13 @@
 }
 
 .lexicon-alphabet {
+  display: none;
+  @include bp-narrow {
+    display: grid;
+  }
+
   margin: 0 0 6rem;
   padding: 0 0 3rem;
-  display: grid;
   border-bottom: 1px solid $color-grey;
   grid-template-columns: repeat(28, 1fr);
 
@@ -34,9 +38,17 @@
 
     a {
       text-decoration: none;
-      color: $text-color;
+      color: $text-color-dark;
       font-weight: $font-weight-bold;
       text-transform: uppercase;
+      display: inline-block;
+      padding: .4rem .55rem .25rem;
+      line-height: 1;
+      transition: all 250ms;
+    }
+    a:hover {
+      background: $color-red;
+      color: white;
     }
   }
 }
@@ -44,12 +56,16 @@
 .lexicon-group {
 
   position: relative;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
+
+  @include bp-narrow {
+    margin-bottom: 6rem;
+  }
 
   .lexicon-group__number {
     display: none;
 
-    @include bp-normal {
+    @include bp-wide {
       text-transform: uppercase;
       display: block;
       font-size: 15rem;
@@ -68,17 +84,19 @@
 
 .lexicon-list {
 
-  @include bp-narrow {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
-  }
+  @include clearfix();
 
   a {
     text-decoration: none;
     color: white;
-    display: block;
+    float: left;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+
+    @include bp-narrow {
+      margin-bottom: 3rem;
+      margin-right: 3rem;
+    }
 
     &:hover {
       .lexicon-list__item {
@@ -92,7 +110,8 @@
     padding: 1.5rem;
     background: $color-blue;
     color: white;
-    min-height: 15rem;
+    height: 15rem;
+    width: 16.75rem;
     display: flex;
     align-items: flex-end;
     flex-flow: column;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Alphabet extends Component {
   
   state = {
-    letters: 'abcdefghijklmnopgrstuvxyzæøå',
+    letters: 'abcdefghijklmnopgrstuvwxyzæøå',
     alphabet: []
   }
 
@@ -24,7 +24,7 @@ class Alphabet extends Component {
     return (
       <ul className="lexicon-alphabet">
         {alphabet.map(function(letter) {
-          return <li className="lexicon-alphabet__letter"><a href="#">{ letter }</a></li>
+          return <li className="lexicon-alphabet__letter"><a href={`#letter-${letter}`}>{ letter }</a></li>
         })}
       </ul>
     )

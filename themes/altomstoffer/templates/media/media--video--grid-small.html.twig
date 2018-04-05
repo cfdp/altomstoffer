@@ -31,25 +31,28 @@
  * @ingroup themeable
  */
 #}
-<div{{ attributes }}>
 
-  <div class="grid-item__background">
-    {% if content.field_video_image %}
-      {{ content.field_video_image }}
-    {% endif %}
-    {{ content.field_video_duration }}
-  </div>
+<a data-colorbox-inline=".overlay__item.media-{{ media.id }}" data-width="720">
+  <div{{ attributes }}>
 
-  <div class="grid-item__content text">
-    <div class="bundle">
-      <svg class='icon icon-play'>
-        <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#play' />
-      </svg>
-      <span>Video</span>
+    <div class="grid-item__background">
+      {% if content.field_video_image %}
+        {{ content.field_video_image }}
+      {% endif %}
+      {{ content.field_video_duration }}
     </div>
-    <h2>{{ content.name }}</h2>
-    <svg class='icon icon-arrow-right'>
-      <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#arrow-right' />
-    </svg>
+
+    <div class="grid-item__content text">
+      <div class="bundle">
+        <svg class='icon icon-play'>
+          <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#play' />
+        </svg>
+        <span>Video</span>
+      </div>
+      <h2>{{ content.name }}</h2>
+      <svg class='icon icon-arrow-right'>
+        <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#arrow-right' />
+      </svg>
+    </div>
   </div>
-</div>
+</a>

@@ -52,7 +52,7 @@
       <div class="hero__content-inner">
         {{ content.field_hero_title }}
         {{ content.field_hero_body }}
-        {% if content.field_hero_link %}
+        {% if content.field_hero_link|render|striptags|trim %}
         <a href="{{ content.field_hero_link[0]['#url'] }}" class="button">
         {{ content.field_hero_link[0]['#title'] }}
         <svg class='icon icon-arrow-right'>

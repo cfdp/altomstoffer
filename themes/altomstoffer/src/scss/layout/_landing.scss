@@ -1,12 +1,35 @@
-.landing-grid {
+.landing-grid__page {
+  @include bp-normal {
+    .landing-grid__item:nth-child(6n-5),
+    .landing-grid__item:nth-child(6n-1) {
+      float: left;
+      width: 60%;
+    }
+    .landing-grid__item:nth-child(6n-4),
+    .landing-grid__item:nth-child(6n) {
+      float: left;
+      width: 40%;
+    }
+    .landing-grid__item:nth-child(6n-3) {
+      float: right;
+      width: 60%;
+    }
+    .landing-grid__item:nth-child(6n-2) {
+      float: left;
+      width: 40%;
+    }
+  }
+}
+
+.landing-grid__front {
 
   @include bp-normal {
     
     @include display-grid;
     grid-gap: 0;
     grid-template-columns: repeat(5, 1fr);
-    -ms-grid-columns: repeat(5, 1fr);
-    -ms-grid-rows: repeat(3, 1fr);
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
     grid-template-areas:
       "grid-1 grid-1 grid-1 grid-2 grid-2"
       "grid-3 grid-3 grid-4 grid-4 grid-4"
