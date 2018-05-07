@@ -107,7 +107,7 @@ blockquote {
 
 .text a,
 .cke_editable a {
-  color: #e82c2c;
+  color: #ff8b1e;
   text-decoration: none; }
 
 .text a:hover,
@@ -183,7 +183,7 @@ input[type=search] {
 
 input[type=submit],
 input[type=button] {
-  background: #00a6d8;
+  background: #005c8d;
   color: white;
   padding: 0.75em 2em;
   box-sizing: border-box;
@@ -192,11 +192,11 @@ input[type=button] {
   appearance: none; }
 
 ::-moz-selection {
-  background-color: #e82c2c;
+  background-color: #ff8b1e;
   color: white; }
 
 ::selection {
-  background-color: #e82c2c;
+  background-color: #ff8b1e;
   color: white; }
 
 /* Layout */
@@ -328,11 +328,11 @@ input[type=button] {
 
 .footer-container .layout-footer-first {
   padding: 5rem 0;
-  background: #1a262e; }
+  background: #005c8d; }
 
 .footer-container .layout-footer-second {
   padding: 2.5rem 0;
-  background: #19242c; }
+  background: #00507a; }
 
 .footer-container .region-footer-first,
 .footer-container .region-footer-second {
@@ -416,8 +416,8 @@ body.page-node-type-landing-page .layout-content {
       padding: 0 0 10rem; } }
 
 .layout-sidebar {
-  background-color: #e82c2c;
-  background: linear-gradient(#e82c2c 50%, #91312a);
+  background-color: #ff8b1e;
+  background: linear-gradient(#ff8b1e 50%, #a45912);
   color: white;
   width: 100%;
   height: 100vh;
@@ -443,7 +443,7 @@ body.page-node-type-landing-page .layout-content {
       padding: 15rem 7.5rem;
       transition: right 300ms ease-in-out;
       z-index: 100;
-      background: linear-gradient(#e82c2c 70%, #91312a); }
+      background: linear-gradient(#ff8b1e 70%, #a45912); }
       .layout-sidebar.active {
         right: 0; } }
   .layout-sidebar .icon-close {
@@ -651,8 +651,8 @@ figure.figure-embed {
   font-size: 1.8rem;
   font-weight: 700;
   color: white;
-  background: #e82c2c;
-  box-shadow: 4px 0 0 0 #e82c2c, -4px 0 0 0 #e82c2c;
+  background: #ff8b1e;
+  box-shadow: 4px 0 0 0 #ff8b1e, -4px 0 0 0 #ff8b1e;
   display: inline;
   line-height: 1.15em; }
 
@@ -685,22 +685,44 @@ figure.figure-embed {
     margin-left: -95px;
     margin-right: -95px; } }
 
+.loading {
+  font-style: italic; }
+
+.lexicon .no-results {
+  font-style: italic; }
+
 .lexicon-search {
   margin-top: 6rem;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  position: relative; }
   .lexicon-search .lexicon-search__input {
-    background: #f1f1f1;
     width: 100%;
     font-size: 1.5rem;
-    padding: 3rem;
-    border: none; }
+    padding: 3rem 3rem 3rem 8rem;
+    border: none;
+    background-color: #f1f1f1;
+    background-image: url("../src/svg/search.svg");
+    background-size: 3rem;
+    background-position: 3rem 2.4rem;
+    background-repeat: no-repeat; }
+  .lexicon-search .lexicon-search__cancel {
+    position: absolute;
+    top: 2.4rem;
+    right: 3rem;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    background-image: url("../src/svg/cancel.svg");
+    background-size: 3rem;
+    background-repeat: no-repeat; }
 
 .lexicon-alphabet {
   display: none;
   margin: 0 0 6rem;
   padding: 0 0 3rem;
   border-bottom: 1px solid #dbdbdb;
-  grid-template-columns: repeat(28, 1fr); }
+  grid-template-columns: repeat(29, 1fr); }
   @media (min-width: 600px) {
     .lexicon-alphabet {
       display: grid; } }
@@ -719,8 +741,11 @@ figure.figure-embed {
       line-height: 1;
       transition: all 250ms; }
     .lexicon-alphabet .lexicon-alphabet__letter a:hover {
-      background: #e82c2c;
+      background: #ff8b1e;
       color: white; }
+    .lexicon-alphabet .lexicon-alphabet__letter.state-false a {
+      color: #dbdbdb;
+      cursor: initial; }
 
 .lexicon-group {
   position: relative;
@@ -761,12 +786,12 @@ figure.figure-embed {
       margin-bottom: 3rem;
       margin-right: 3rem; } }
   .lexicon-list a:hover .lexicon-list__item {
-    background-color: #e82c2c; }
+    background-color: #ff8b1e; }
 
 .lexicon-list .lexicon-list__item {
   box-sizing: border-box;
   padding: 1.5rem;
-  background: #00a6d8;
+  background: #005c8d;
   color: white;
   height: 15rem;
   width: 16.75rem;
@@ -776,9 +801,9 @@ figure.figure-embed {
   word-break: break-all;
   transition: background 250ms; }
   .lexicon-list .lexicon-list__item.type-stof {
-    background: #00a6d8; }
+    background: #00d79a; }
   .lexicon-list .lexicon-list__item.type-alias {
-    background: #1a262e; }
+    background: #005c8d; }
 
 .lexicon-list .lexicon-list__spacer {
   margin-bottom: auto; }
@@ -838,13 +863,13 @@ figure.figure-embed {
       top: .75rem;
       transition: background-color 250ms; }
   .toc .active a {
-    color: #00a6d8;
+    color: #005c8d;
     position: relative; }
     .toc .active a:before {
       content: "";
       width: 2rem;
       height: 4px;
-      background-color: #00a6d8;
+      background-color: #005c8d;
       display: block;
       position: absolute;
       left: -4rem;
@@ -866,7 +891,7 @@ figure.figure-embed {
       display: block; }
     .toc .toc-to-top div.svg {
       display: block;
-      background: #00a6d8;
+      background: #005c8d;
       width: 2rem;
       height: 2rem;
       padding: 1rem;
@@ -1049,8 +1074,8 @@ figure.figure-embed {
   display: inline-block;
   color: white;
   text-decoration: none;
-  background: #e82c2c;
-  border-bottom: 2px solid #91312a;
+  background: #ff8b1e;
+  border-bottom: 2px solid #a45912;
   padding: 1.5rem 2.5rem;
   font-weight: 700;
   position: relative;
@@ -1081,7 +1106,7 @@ figure.figure-embed {
   .quote .icon {
     width: 2rem;
     height: 2rem;
-    fill: #e82c2c; }
+    fill: #ff8b1e; }
   .quote .quote__text {
     font-size: 2.5rem;
     line-height: 1.35em;
@@ -1136,7 +1161,7 @@ figure.figure-embed {
     float: left;
     margin: 0 .75rem .5rem 0; }
     .video--archive .view-filters div.form-item label {
-      border: 2px solid #e82c2c;
+      border: 2px solid #ff8b1e;
       padding: 0.5rem 1rem;
       font-size: 1.3rem;
       text-transform: uppercase;
@@ -1238,7 +1263,7 @@ figure.figure-embed {
     clear: both; }
   .video--archive .field--name-field-tags .field__item {
     float: left;
-    border: 2px solid #e82c2c;
+    border: 2px solid #ff8b1e;
     padding: 0.5rem 1rem;
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -1256,7 +1281,7 @@ figure.figure-embed {
   backface-visibility: hidden;
   position: relative;
   box-shadow: 0;
-  background: #e82c2c; }
+  background: #ff8b1e; }
   .video--archive .grid-item__background:after {
     content: "";
     display: table;
@@ -1299,7 +1324,7 @@ figure.figure-embed {
       clear: both; }
     .overlay-content .field--name-field-tags .field__item {
       float: left;
-      border: 2px solid #e82c2c;
+      border: 2px solid #ff8b1e;
       padding: 0.5rem 1rem;
       font-size: 1.3rem;
       text-transform: uppercase;
@@ -1523,7 +1548,7 @@ figure.figure-embed {
   right: 0;
   width: 25px;
   height: 25px;
-  background: #e82c2c; }
+  background: #ff8b1e; }
   #cboxClose:before {
     content: "Luk"; }
 
@@ -1626,7 +1651,7 @@ figure.figure-embed {
   text-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.35); }
 
 .landing-grid .bundle-lexicon-article .grid-item__background {
-  background: #00a6d8; }
+  background: #00d79a; }
 
 .landing-grid .bundle-lexicon-article canvas {
   width: 100%;
@@ -1649,7 +1674,7 @@ figure.figure-embed {
     content: ""; }
 
 .landing-grid .bundle-video .grid-item__background {
-  background: #e82c2c; }
+  background: #ff8b1e; }
 
 .landing-grid .bundle-video img {
   opacity: 0.15; }
@@ -1682,7 +1707,7 @@ figure.figure-embed {
       .menu-toggle a {
         line-height: 3.25rem; } }
     .menu-toggle a svg {
-      fill: #e82c2c;
+      fill: #ff8b1e;
       float: right;
       width: 3.5rem;
       height: 3.5rem; }

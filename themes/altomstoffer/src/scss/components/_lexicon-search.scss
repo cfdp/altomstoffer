@@ -5,22 +5,50 @@
   }
 }
 
-.lexicon-search {
+.loading {
+  font-style: italic;
+}
 
+.lexicon {
+  .no-results {
+    font-style: italic;
+  }
+}
+
+.lexicon-search {
   margin-top: 6rem;
   margin-bottom: 3rem;
+  position: relative;
 
   .lexicon-search__input {
-    background: $color-grey-light;
     width: 100%;
     font-size: $font-size-medium;
-    padding: 3rem;
+    padding: 3rem 3rem 3rem 8rem;
     border: none;
+    background-color: $color-grey-light;
+    background-image: url("../src/svg/search.svg");
+    background-size: 3rem;
+    background-position: 3rem 2.4rem;
+    background-repeat: no-repeat;
+  }
+
+  .lexicon-search__cancel {
+    position: absolute;
+    top: 2.4rem;
+    right: 3rem;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    background-image: url("../src/svg/cancel.svg");
+    background-size: 3rem;
+    background-repeat: no-repeat;
   }
 }
 
 .lexicon-alphabet {
   display: none;
+
   @include bp-narrow {
     display: grid;
   }
@@ -28,7 +56,7 @@
   margin: 0 0 6rem;
   padding: 0 0 3rem;
   border-bottom: 1px solid $color-grey;
-  grid-template-columns: repeat(28, 1fr);
+  grid-template-columns: repeat(29, 1fr);
 
   .lexicon-alphabet__letter {
     list-style: none;
@@ -47,8 +75,15 @@
       transition: all 250ms;
     }
     a:hover {
-      background: $color-red;
+      background: $color-orange;
       color: white;
+    }
+
+    &.state-false {
+      a {
+        color: $color-grey;
+        cursor: initial;
+      }
     }
   }
 }
@@ -100,7 +135,7 @@
 
     &:hover {
       .lexicon-list__item {
-        background-color: $color-red;
+        background-color: $color-orange;
       }
     }
   }
@@ -119,10 +154,10 @@
     transition: background 250ms;
 
     &.type-stof {
-      background: $color-blue;
+      background: $color-green;
     }
     &.type-alias {
-      background: $color-blue-darkest;
+      background: $color-blue;
     }
   }
 

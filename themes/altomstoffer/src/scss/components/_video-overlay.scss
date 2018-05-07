@@ -39,7 +39,7 @@
     
     .field__item {
       float: left;
-      border: 2px solid $color-red;
+      border: 2px solid $color-orange;
       padding: 0.5rem 1rem;
       font-size: $font-size-small;
       text-transform: uppercase;
@@ -271,7 +271,7 @@
         right: 0;
         width: 25px;
         height: 25px;
-        background: $color-red;
+        background: $color-orange;
 
         &:before {
           content: "Luk";

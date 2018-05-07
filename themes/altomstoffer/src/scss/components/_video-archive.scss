@@ -44,7 +44,7 @@
         margin: 0 .75rem .5rem 0;
 
       label {
-        border: 2px solid $color-red;
+        border: 2px solid $color-orange;
         padding: 0.5rem 1rem;
         font-size: $font-size-small;
         text-transform: uppercase;
@@ -163,7 +163,7 @@
     
     .field__item {
       float: left;
-      border: 2px solid $color-red;
+      border: 2px solid $color-orange;
       padding: 0.5rem 1rem;
       font-size: $font-size-small;
       text-transform: uppercase;
@@ -185,7 +185,7 @@
     backface-visibility: hidden;
     position: relative;
     box-shadow: 0;
-    background: $color-red-light;
+    background: $color-orange;
     @include clearfix();
 
     @include bp-normal {
