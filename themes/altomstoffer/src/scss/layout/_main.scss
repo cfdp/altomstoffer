@@ -78,9 +78,24 @@
 
   #block-altomstoffer-page-title,
   #block-altomstoffer-local-tasks,
-  .messages,
   .node__intro {
     box-sizing: border-box;
+    padding: 0 3rem;
+
+    @include bp-normal {
+      width: 570px;
+      margin: auto;
+      padding: 0;
+    }
+    @include bp-wide {
+      position: relative;
+      left: -120px;
+    }
+  }
+
+  .messages {
+    box-sizing: border-box;
+    margin: 0 3rem;
 
     @include bp-normal {
       width: 570px;
@@ -89,7 +104,7 @@
     @include bp-wide {
       position: relative;
       left: -120px;
-    }
+    }    
   }
 
 }
@@ -97,7 +112,11 @@
 .layout-post-content {
 
   background: $color-grey-light;
-  padding: 5rem 0;
+  padding: 5rem 3rem;
+
+  @include bp-normal {
+    padding: 5rem 0;
+  }
 
   .region-post-content {
     @include bp-normal {

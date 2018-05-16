@@ -47,10 +47,14 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 h1 {
-  font-size: $font-size-largest;
+  font-size: 3.6rem;
   font-family: $font-fam-base;
-  line-height: 1em;
+  line-height: $line-height-small;
   text-transform: uppercase;
+
+  @include bp-normal {
+    font-size: $font-size-largest;
+  }
 }
 h1.page-title {
   margin-bottom: 2rem;

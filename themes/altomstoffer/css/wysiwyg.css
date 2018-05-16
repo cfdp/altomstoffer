@@ -53,10 +53,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0; }
 
 h1 {
-  font-size: 4.5rem;
+  font-size: 3.6rem;
   font-family: "Rubik", sans-serif;
-  line-height: 1em;
+  line-height: 1.15em;
   text-transform: uppercase; }
+  @media (min-width: 820px) {
+    h1 {
+      font-size: 4.5rem; } }
 
 h1.page-title {
   margin-bottom: 2rem;

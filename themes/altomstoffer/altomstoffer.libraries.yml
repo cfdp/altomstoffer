@@ -5,12 +5,15 @@ global-styling:
       css/styles.css: {}
   js:
     bower_components/svgxuse/svgxuse.js: {}
+    bower_components/typed.js/lib/typed.js: {}
     js/progressive-image.js: {}
     js/colorboxConfig.js: {}
+    js/typedConfig.js: {}
     js/libraries/scrollspy.js: {}
     js/toc.js: {}
-    js/video.js: {}
+    js/videoFilterTags.js: {}
     js/sidebar.js: {}
     dependencies:
     - core/drupal
     - core/jquery
+    - core/jquery.once

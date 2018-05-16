@@ -8,7 +8,7 @@
   }
 
   .region-header {
-    padding: 1.5rem;
+    padding: 1.5rem 3rem;
     display: grid;
     display: -ms-grid;
     grid-template-columns: 1fr 1fr;
@@ -25,7 +25,7 @@
       box-sizing: border-box;
       margin: 0 auto;
       max-width: 960px;
-      padding: 0;
+      padding: 0 1rem;
 
       > .block:nth-child(1) {
         -ms-grid-column: 1;

@@ -1,6 +1,6 @@
 .toc {
 
-  background: $color-blue-darkest;
+  background: $color-blue;
   color: white;
   padding: 4rem 4rem 6.5rem;
   box-sizing: border-box;
@@ -51,14 +51,14 @@
     }
   }
   .active a {
-    color: $color-blue;
+    color: $color-green;
     position: relative;
 
     &:before {
       content: "";
       width: 2rem;
       height: 4px;
-      background-color: $color-blue;
+      background-color: $color-green;
       display: block;
       position: absolute;
       left: -4rem;
@@ -86,7 +86,7 @@
     }
     div.svg {
       display: block;
-      background: $color-blue;
+      background: $color-orange;
       width: 2rem;
       height: 2rem;
       padding: 1rem;

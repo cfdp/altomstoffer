@@ -1,15 +1,43 @@
-.site-logo {
-  display: inline-block;
-  
-  img {
-    height: 3.5rem;
+#logo-text {
+  color: #262626;
+  line-height: 1;
+  font-weight: $font-weight-black;
+  text-transform: uppercase;
+
+  a {
+    color: #262626;
+    text-decoration: none;
   }
-}
-.menu-toggle {
-  text-align: right;
 
   @include bp-normal {
-    margin-top: 1rem;
+    color: white;
+    a {
+      color: white;
+    }
+  }
+
+  .logo-text__first {
+    font-size: 1.6rem;
+    letter-spacing: -0.1rem;
+  }
+  .logo-text__second {
+    font-size: 3.2rem;
+    letter-spacing: -0.2rem;
+
+    span {
+      font-size: 1.6rem;
+      margin-left: 0.2rem;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.menu-toggle {
+  text-align: right;
+  margin-top: .65rem;
+
+  @include bp-normal {
+    margin-top: .75rem;
   }
 
   a {
@@ -19,7 +47,7 @@
     display: inline-block;
 
     @include bp-normal {
-      line-height: 3.25rem;
+      line-height: 2.75rem;
     }
 
     svg {
@@ -29,10 +57,10 @@
       height: 3.5rem;
 
       @include bp-normal {
-        margin-left: 0.5rem;
+        margin-left: 0.65rem;
         fill: white;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }

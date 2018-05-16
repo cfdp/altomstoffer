@@ -1,0 +1,5 @@
+name: AOS Typed
+type: module
+description: 'Provides a auto type functionality via tokens.'
+package: AOS
+core: 8.x

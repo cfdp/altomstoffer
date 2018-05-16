@@ -5,6 +5,7 @@
 @import "base/mixins/media-queries";
 @import "base/mixins/grid";
 @import "base/mixins/clearfix";
+@import "base/mixins/buttons";
 
 /* Base */
 @import "base/colors";
@@ -38,3 +39,4 @@
 @import "components/landing";
 @import "components/menu-toggle";
 @import "components/sidebar";
+@import "components/typed";
