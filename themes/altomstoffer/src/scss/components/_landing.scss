@@ -6,8 +6,16 @@
 
   .landing-grid__item {
     position: relative;
-
+    margin-bottom: 1.5rem;
     @include clearfix();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include bp-normal {
+      margin-bottom: 0;
+    }
 
     a {
       display: block;

@@ -424,7 +424,7 @@ body.page-node-type-landing-page #block-altomstoffer-local-tasks {
   display: none; }
 
 body.page-node-type-landing-page .layout-content {
-  padding: 1.5rem; }
+  padding: 3rem 1.5rem; }
   @media (min-width: 820px) {
     body.page-node-type-landing-page .layout-content {
       position: relative;
@@ -1604,11 +1604,17 @@ figure.figure-embed {
   display: none; }
 
 .landing-grid .landing-grid__item {
-  position: relative; }
+  position: relative;
+  margin-bottom: 1.5rem; }
   .landing-grid .landing-grid__item:after {
     content: "";
     display: table;
     clear: both; }
+  .landing-grid .landing-grid__item:last-child {
+    margin-bottom: 0; }
+  @media (min-width: 820px) {
+    .landing-grid .landing-grid__item {
+      margin-bottom: 0; } }
   .landing-grid .landing-grid__item a {
     display: block;
     cursor: pointer; }
