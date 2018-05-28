@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_browser_entity_form
+name: widgets
+label: Widgets
+display: iframe
+display_configuration:
+  width: '1140'
+  height: '650'
+  link_text: ''
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: drop_down
+widget_selector_configuration: {  }
+widgets:
+  9a5b93aa-fecc-434b-9e9d-1672c210b311:
+    settings:
+      entity_type: block_content
+      bundle: quote
+      form_mode: default
+      submit_text: Save
+    uuid: 9a5b93aa-fecc-434b-9e9d-1672c210b311
+    weight: -8
+    label: Quote
+    id: entity_form
+  4e4fb94d-327e-452a-b1b9-7847c7396fe3:
+    settings:
+      entity_type: block_content
+      bundle: teaser
+      form_mode: default
+      submit_text: Save
+    uuid: 4e4fb94d-327e-452a-b1b9-7847c7396fe3
+    weight: -10
+    label: Teaser
+    id: entity_form
+  da16c397-8823-4d64-8484-f64a58b44956:
+    settings:
+      entity_type: block_content
+      bundle: basic
+      form_mode: default
+      submit_text: Save
+    uuid: da16c397-8823-4d64-8484-f64a58b44956
+    weight: -9
+    label: Basic
+    id: entity_form

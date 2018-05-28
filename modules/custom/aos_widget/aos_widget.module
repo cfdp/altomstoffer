@@ -46,7 +46,7 @@ function aos_widget_form_alter(&$form, FormStateInterface $form_state, $form_id)
     // When entity exists.
     if(isset($entity) && $entity->bundle() != 'image_embed') {
 
-      if($entity->bundle() == 'text_button') {
+      if($entity->bundle() == 'basic') {
         // Enable aligning.
         $form['attributes']['data-align']['#default_value'] = isset($entity_element['data-align']) ? $entity_element['data-align'] : 'left';
         unset($form['attributes']['data-align']['#options']['center']);

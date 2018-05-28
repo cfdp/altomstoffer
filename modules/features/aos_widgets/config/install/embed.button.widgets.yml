@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - block_content.type.quote
+    - block_content.type.teaser
+  content:
+    - 'file:file:877e4909-f5f4-4000-946c-5a87713248fc'
+  module:
+    - block_content
+    - entity_embed
+label: Widgets
+id: widgets
+type_id: entity
+type_settings:
+  entity_type: block_content
+  bundles:
+    - basic
+    - quote
+    - teaser
+  display_plugins:
+    - 'view_mode:block_content.full'
+  entity_browser: widgets
+  entity_browser_settings:
+    display_review: false
+  inline_entity_edit_enabled: 1
+icon_uuid: 877e4909-f5f4-4000-946c-5a87713248fc

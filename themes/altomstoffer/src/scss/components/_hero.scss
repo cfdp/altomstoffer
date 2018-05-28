@@ -96,13 +96,17 @@
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    padding: 0 3rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
 
     @include bp-normal {
       margin: auto;
-      width: 760px;
+      width: 960px;
       top: 40%;
       transform: translateY(-40%);
+    }
+    @include bp-wide {
+      width: 1140px;
     }
   }
 
@@ -110,10 +114,12 @@
     font-weight: $font-weight-black;
     color: white;
     font-size: 4rem;
+    line-height: $line-height-small;
     text-transform: uppercase;
     padding: 0;
     margin-bottom: 1rem;
     text-shadow: 0 0 1.2rem rgba(0,0,0,0.35);
+    @include hyphenate();
 
     @include bp-narrow {
       font-size: 4.5rem;

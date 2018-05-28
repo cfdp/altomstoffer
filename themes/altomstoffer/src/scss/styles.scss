@@ -6,6 +6,7 @@
 @import "base/mixins/grid";
 @import "base/mixins/clearfix";
 @import "base/mixins/buttons";
+@import "base/mixins/hyphenate";
 
 /* Base */
 @import "base/colors";
@@ -33,10 +34,12 @@
 @import "components/toc";
 @import "components/sections";
 @import "components/hero";
-@import "components/quote";
 @import "components/video-archive";
 @import "components/video-overlay";
 @import "components/landing";
 @import "components/menu-toggle";
 @import "components/sidebar";
 @import "components/typed";
+
+@import "components/widgets/basic";
+@import "components/widgets/quote";

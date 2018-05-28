@@ -1,0 +1,13 @@
+name: 'AOS Widgets'
+type: module
+core: 8.x
+dependencies:
+  - block_content
+  - embed
+  - entity_browser
+  - entity_browser_entity_form
+  - entity_embed
+  - field
+  - node
+  - options
+  - text

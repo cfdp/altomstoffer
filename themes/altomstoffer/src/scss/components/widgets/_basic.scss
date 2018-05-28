@@ -1,0 +1,38 @@
+.embedded-entity.bundle-basic {
+
+  h3 {
+    color: white;
+    margin-bottom: 2rem;
+  }
+  p {
+    color: white;
+  }
+
+  .inner-content {
+    padding: 3rem;
+  }
+  .color-cyan {
+    background-color: $color-green;
+  }
+  .color-orange {
+    background-color: $color-orange;
+  }
+  .color-blue {
+    background-color: $color-blue;
+  }
+
+  &.align-left {
+    @include bp-normal {
+      float: left;
+      width: calc(50% + 95px);
+      margin: .25rem 2rem 1rem -95px;
+    }
+  }
+  &.align-right {
+    @include bp-normal {
+      float: right;
+      width: calc(50% + 95px);
+      margin: 0 -95px 1rem 2rem;
+    }
+  }
+}
