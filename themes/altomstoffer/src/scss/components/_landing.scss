@@ -159,10 +159,10 @@
       float: left;
     }
     .field--name-field-lexicon-aliases {
-      word-break: break-all;
       line-height: $line-height-base;
       text-shadow: 0 0 1.2rem rgba(0,0,0,0.35);
       display: block;
+      @include hyphenate();
       @include clearfix();
 
       .field__item {

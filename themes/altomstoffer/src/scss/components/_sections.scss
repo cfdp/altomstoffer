@@ -23,7 +23,7 @@
 
     .section__title {
       margin: 0 0 3rem;
-      word-break: break-all;
+      @include hyphenate();
     }
 
     &:nth-child(even) {

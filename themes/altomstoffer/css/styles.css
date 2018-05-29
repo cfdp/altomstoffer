@@ -859,8 +859,13 @@ figure.figure-embed {
   display: flex;
   align-items: flex-end;
   flex-flow: column;
-  word-break: break-all;
-  transition: background 250ms; }
+  transition: background 250ms;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
   .lexicon-list .lexicon-list__item.type-stof {
     background: #00d79a; }
   .lexicon-list .lexicon-list__item.type-alias {
@@ -904,7 +909,12 @@ figure.figure-embed {
   .toc .title {
     display: inline-block;
     padding-left: 4rem;
-    word-break: break-all; }
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto; }
   .toc a {
     position: relative;
     color: white;
@@ -998,7 +1008,12 @@ figure.figure-embed {
         opacity: .2; } }
   .sections .sections__item .section__title {
     margin: 0 0 3rem;
-    word-break: break-all; }
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto; }
   .sections .sections__item:nth-child(even) {
     background: white; }
   .sections .sections__item:nth-child(odd) {
@@ -1724,10 +1739,15 @@ figure.figure-embed {
   float: left; }
 
 .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases {
-  word-break: break-all;
   line-height: 1.5em;
   text-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.35);
-  display: block; }
+  display: block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
   .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases:after {
     content: "";
     display: table;

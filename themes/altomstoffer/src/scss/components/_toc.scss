@@ -1,5 +1,4 @@
 .toc {
-
   background: $color-blue;
   color: white;
   padding: 4rem 4rem 6.5rem;
@@ -27,7 +26,7 @@
   .title {
     display: inline-block;
     padding-left: 4rem;
-    word-break: break-all;
+    @include hyphenate();
   }
   a {
     position: relative;
@@ -105,12 +104,8 @@
 }
 
 .toc--float {
-
   display: none;
 
-  @include bp-normal {
-
-  }
   @include bp-wide {
     display: block;
     position: sticky;
