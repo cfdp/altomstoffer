@@ -8,6 +8,20 @@
   h2 {
     color: white;
     margin-bottom: 4rem;
+    @include bp-tablet {
+      max-width: 320px;
+      margin: 0 auto 4rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  .toc__items {
+    @include bp-tablet {
+      overflow: scroll;
+      max-height: calc(100% - 6.8rem);
+      max-width: 320px;
+      margin: auto;
+    }
   }
 
   .toc__item {
@@ -53,15 +67,17 @@
     color: $color-green;
     position: relative;
 
-    &:before {
-      content: "";
-      width: 2rem;
-      height: 4px;
-      background-color: $color-green;
-      display: block;
-      position: absolute;
-      left: -4rem;
-      top: .75rem;
+    @include bp-normal {
+      &:before {
+        content: "";
+        width: 2rem;
+        height: 4px;
+        background-color: $color-green;
+        display: block;
+        position: absolute;
+        left: -4rem;
+        top: .75rem;
+      }
     }
   }
 
@@ -76,6 +92,7 @@
       display: block;
       text-align: center;
       margin: auto;
+      text-decoration: none;
     }
     svg {
       fill: white;
@@ -103,8 +120,82 @@
   }
 }
 
+.toc-toggle {
+  @include button($color-orange);
+
+  position: fixed;
+  bottom: 2rem;
+  top: initial;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white !important;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-small;
+  text-align: center;
+  min-width: 205px;
+  box-sizing: border-box;
+
+  &:active {
+    top: initial;
+    margin-bottom: -2px;
+  }
+  &:hover {
+    text-decoration: none !important;
+
+    svg {
+      transform: initial;
+    }
+  }
+
+  svg {
+    margin: 0rem 1rem 0 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    float: left;
+  }
+  
+  .icon-close {
+    display: none;
+  }
+  .icon-list-ul {
+    display: inline-block;
+  }
+
+  &.active {
+    .icon-list-ul {
+      display: none;
+    }
+    .icon-close {
+      display: inline-block;
+    }
+  }
+
+  @include bp-wide {
+    display: none;
+  }
+}
+
 .toc--float {
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  padding: 7.5rem 5rem 10rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+
+  .toc-to-top {
+    display: none;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
 
   @include bp-wide {
     display: block;
@@ -115,5 +206,12 @@
     float: right;
     margin-top: 6rem;
     width: 36rem;
+    padding: 4rem 4rem 6.5rem;
+    opacity: 1;
+    visibility: visible;
+
+    .toc-to-top {
+      display: block;
+    }
   }
 }

@@ -459,7 +459,7 @@ body.page-node-type-landing-page .layout-content {
       right: -60rem;
       padding: 15rem 7.5rem;
       transition: right 300ms ease-in-out;
-      z-index: 100;
+      z-index: 101;
       background: linear-gradient(#ff8b1e 70%, #a45912); }
       .layout-sidebar.active {
         right: 0; } }
@@ -897,6 +897,17 @@ figure.figure-embed {
   .toc h2 {
     color: white;
     margin-bottom: 4rem; }
+    @media (max-width: 1200px) {
+      .toc h2 {
+        max-width: 320px;
+        margin: 0 auto 4rem;
+        font-size: 2.5rem; } }
+  @media (max-width: 1200px) {
+    .toc .toc__items {
+      overflow: scroll;
+      max-height: calc(100% - 6.8rem);
+      max-width: 320px;
+      margin: auto; } }
   .toc .toc__item {
     margin-bottom: 3rem; }
     .toc .toc__item:last-child {
@@ -936,15 +947,16 @@ figure.figure-embed {
   .toc .active a {
     color: #00d79a;
     position: relative; }
-    .toc .active a:before {
-      content: "";
-      width: 2rem;
-      height: 4px;
-      background-color: #00d79a;
-      display: block;
-      position: absolute;
-      left: -4rem;
-      top: .75rem; }
+    @media (min-width: 820px) {
+      .toc .active a:before {
+        content: "";
+        width: 2rem;
+        height: 4px;
+        background-color: #00d79a;
+        display: block;
+        position: absolute;
+        left: -4rem;
+        top: .75rem; } }
   .toc .toc-to-top {
     position: absolute;
     bottom: -4.65rem;
@@ -954,7 +966,8 @@ figure.figure-embed {
     .toc .toc-to-top a {
       display: block;
       text-align: center;
-      margin: auto; }
+      margin: auto;
+      text-decoration: none; }
     .toc .toc-to-top svg {
       fill: white;
       width: 2rem;
@@ -976,8 +989,82 @@ figure.figure-embed {
       color: #19242c;
       font-size: 1.3rem; }
 
+.toc-toggle {
+  background: #ff8b1e;
+  color: white;
+  border-bottom: 2px solid #ea7100;
+  padding: 1.5rem 2.5rem;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  line-height: 1;
+  position: fixed;
+  bottom: 2rem;
+  top: initial;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white !important;
+  font-weight: 400;
+  line-height: 1.15em;
+  text-align: center;
+  min-width: 205px;
+  box-sizing: border-box; }
+  .toc-toggle:hover {
+    text-decoration: none; }
+    .toc-toggle:hover svg {
+      transform: translate3d(5px, 0, 0); }
+  .toc-toggle:active {
+    top: 2px;
+    border-bottom-color: transparent; }
+  .toc-toggle svg {
+    fill: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 0 0 1.5rem;
+    transform: translate3d(0, 0, 0);
+    transition: transform 150ms; }
+  .toc-toggle:active {
+    top: initial;
+    margin-bottom: -2px; }
+  .toc-toggle:hover {
+    text-decoration: none !important; }
+    .toc-toggle:hover svg {
+      transform: initial; }
+  .toc-toggle svg {
+    margin: 0rem 1rem 0 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    float: left; }
+  .toc-toggle .icon-close {
+    display: none; }
+  .toc-toggle .icon-list-ul {
+    display: inline-block; }
+  .toc-toggle.active .icon-list-ul {
+    display: none; }
+  .toc-toggle.active .icon-close {
+    display: inline-block; }
+  @media (min-width: 1200px) {
+    .toc-toggle {
+      display: none; } }
+
 .toc--float {
-  display: none; }
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  padding: 7.5rem 5rem 10rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 300ms ease-in-out; }
+  .toc--float .toc-to-top {
+    display: none; }
+  .toc--float.active {
+    visibility: visible;
+    opacity: 1; }
   @media (min-width: 1200px) {
     .toc--float {
       display: block;
@@ -987,7 +1074,12 @@ figure.figure-embed {
       z-index: 100;
       float: right;
       margin-top: 6rem;
-      width: 36rem; } }
+      width: 36rem;
+      padding: 4rem 4rem 6.5rem;
+      opacity: 1;
+      visibility: visible; }
+      .toc--float .toc-to-top {
+        display: block; } }
 
 .sections .sections__item {
   padding: 6rem 3rem; }
@@ -1285,10 +1377,10 @@ figure.figure-embed {
   color: white;
   margin: 1rem 0;
   text-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.35);
-  font-size: 3rem; }
+  font-size: 2.5rem; }
   @media (min-width: 600px) {
     .video--archive h2 {
-      font-size: 3.8rem; } }
+      font-size: 3rem; } }
 
 .video--archive .icon-arrow-right {
   margin-top: 1rem;
@@ -1887,8 +1979,14 @@ figure.figure-embed {
   color: white;
   margin-bottom: 2rem; }
 
-.embedded-entity.bundle-basic p {
+.embedded-entity.bundle-basic p, .embedded-entity.bundle-basic strong, .embedded-entity.bundle-basic ul, .embedded-entity.bundle-basic h1, .embedded-entity.bundle-basic h2, .embedded-entity.bundle-basic h3, .embedded-entity.bundle-basic h4, .embedded-entity.bundle-basic h5, .embedded-entity.bundle-basic h6 {
   color: white; }
+
+.embedded-entity.bundle-basic a {
+  color: white;
+  text-decoration: underline; }
+  .embedded-entity.bundle-basic a:hover {
+    text-decoration: none; }
 
 .embedded-entity.bundle-basic .inner-content {
   padding: 3rem; }

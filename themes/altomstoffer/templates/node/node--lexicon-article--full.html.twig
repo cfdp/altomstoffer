@@ -107,6 +107,15 @@
 
   <div{{ content_attributes.addClass('node__content', 'text') }}>
     {{ toc }}
+    <a href="#" class="toc-toggle">
+      <svg class='icon icon-list-ul'>
+        <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#list-ul' />";
+      </svg>
+      <svg class='icon icon-close'>
+        <use xlink:href='/{{ base_path ~ directory }}/assets/svg/symbols.min.svg#close' />";
+      </svg>
+      {{ 'Table of contents'|t }}
+      </a>
     {{ content.field_sections }}
   </div>
 

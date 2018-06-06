@@ -9,4 +9,14 @@
     }
   };
 
+  Drupal.behaviors.tocToggle = {
+    attach: function (context, settings) {
+      $(".toc-toggle").click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $('.toc--float').toggleClass('active');
+      });
+    }
+  };
+
 })(jQuery, Drupal);
