@@ -1987,6 +1987,36 @@ figure.figure-embed {
   100% {
     opacity: 1; } }
 
+.tooltip {
+  display: inline-block;
+  line-height: 1.4em;
+  border-bottom: 2px solid #ff8b1e;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 250ms; }
+  .tooltip:hover, .tooltip:active {
+    border-color: #54585d; }
+
+.tooltipster-base {
+  max-width: 25rem;
+  font-size: 1.4rem;
+  line-height: 1.15em; }
+  @media (min-width: 820px) {
+    .tooltipster-base {
+      max-width: 30rem; } }
+
+.tooltipster-sidetip .tooltipster-content {
+  padding: 1.25rem 1.5rem; }
+
+.tooltipster-sidetip .tooltipster-box {
+  background: #005c8d;
+  border: 0;
+  border-radius: 0; }
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background,
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+  border-top-color: #005c8d; }
+
 .embedded-entity.bundle-basic h3 {
   color: white;
   margin-bottom: 2rem; }

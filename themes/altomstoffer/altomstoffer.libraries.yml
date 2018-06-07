@@ -2,13 +2,17 @@ global-styling:
   version: VERSION
   css:
     theme:
+      bower_components/tooltipster/dist/css/tooltipster.bundle.css: {}
+      bower_components/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css: {}
       css/styles.css: {}
   js:
     bower_components/svgxuse/svgxuse.js: {}
     bower_components/typed.js/lib/typed.js: {}
+    bower_components/tooltipster/dist/js/tooltipster.bundle.js: {}
     js/progressive-image.js: {}
     js/colorboxConfig.js: {}
     js/typedConfig.js: {}
+    js/tooltipsConfig.js: {}
     js/libraries/scrollspy.js: {}
     js/toc.js: {}
     js/videoFilterTags.js: {}
