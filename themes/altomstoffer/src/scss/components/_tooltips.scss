@@ -1,0 +1,35 @@
+.tooltip {
+  display: inline-block;
+  line-height: 1.4em;
+  border-bottom: 2px solid $color-orange;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 250ms;
+
+  &:hover,
+  &:active {
+    border-color: $text-color;
+  }
+}
+
+.tooltipster-base {
+  max-width: 25rem;
+  font-size: 1.4rem;
+  line-height: $line-height-small;
+
+  @include bp-normal {
+    max-width: 30rem;
+  }
+}
+.tooltipster-sidetip .tooltipster-content {
+  padding: 1.25rem 1.5rem;
+}
+.tooltipster-sidetip .tooltipster-box {
+  background: $color-blue;
+  border: 0;
+  border-radius: 0;
+}
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background,
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+  border-top-color: $color-blue;
+}
