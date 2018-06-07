@@ -1859,6 +1859,12 @@ figure.figure-embed {
 
 .landing-grid .bundle-video .grid-item__background {
   background: #ff8b1e; }
+  .landing-grid .bundle-video .grid-item__background.color-orange {
+    background: #ff8b1e; }
+  .landing-grid .bundle-video .grid-item__background.color-cyan {
+    background: #00d79a; }
+  .landing-grid .bundle-video .grid-item__background.color-blue {
+    background: #005c8d; }
 
 .landing-grid .bundle-video img {
   opacity: 0.15; }

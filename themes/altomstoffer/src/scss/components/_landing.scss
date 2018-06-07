@@ -181,6 +181,16 @@
 
     .grid-item__background {
       background: $color-orange;
+
+      &.color-orange {
+        background: $color-orange;
+      }
+      &.color-cyan {
+        background: $color-green;
+      }
+      &.color-blue {
+        background: $color-blue;
+      }
     }
     img {
       opacity: 0.15;
