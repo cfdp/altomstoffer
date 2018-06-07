@@ -7,6 +7,8 @@
 
 .loading {
   font-style: italic;
+  text-align: center;
+  margin-top: 5rem;
 }
 
 .lexicon {
@@ -91,10 +93,10 @@
 .lexicon-group {
 
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
-  @include bp-narrow {
-    margin-bottom: 6rem;
+  @include bp-normal {
+    margin-bottom: 5rem;
   }
 
   .lexicon-group__number {
@@ -125,12 +127,16 @@
     text-decoration: none;
     color: white;
     float: left;
-    margin-bottom: 2rem;
-    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
 
-    @include bp-narrow {
+    @include bp-normal {
       margin-bottom: 3rem;
       margin-right: 3rem;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
     }
 
     &:hover {
@@ -145,13 +151,18 @@
     padding: 1.5rem;
     background: $color-blue;
     color: white;
-    height: 15rem;
-    width: 16.75rem;
+    height: 10rem;
+    width: 13.75rem;
     display: flex;
     align-items: flex-end;
     flex-flow: column;
     transition: background 250ms;
     @include hyphenate();
+
+    @include bp-normal {
+      height: 15rem;
+      width: 16.74rem; 
+    }
 
     &.type-stof {
       background: $color-green;
@@ -171,11 +182,20 @@
     text-transform: uppercase;
     line-height: $line-height-small;
     margin-bottom: .5rem;
+    font-size: $font-size-small;
+
+    @include bp-normal {
+      font-size: $font-size-base;
+    }
   }
   .lexicon-list__title {
     font-weight: $font-weight-bold;
-    font-size: 2.2rem;
+    font-size: $font-size-base;
     line-height: $line-height-small;
     width: 100%;
+
+    @include bp-normal {
+      font-size: 2.2rem;
+    }
   }
 }

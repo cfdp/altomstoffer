@@ -747,7 +747,9 @@ figure.figure-embed {
     margin-right: -95px; } }
 
 .loading {
-  font-style: italic; }
+  font-style: italic;
+  text-align: center;
+  margin-top: 5rem; }
 
 .lexicon .no-results {
   font-style: italic; }
@@ -810,10 +812,10 @@ figure.figure-embed {
 
 .lexicon-group {
   position: relative;
-  margin-bottom: 4rem; }
-  @media (min-width: 600px) {
+  margin-bottom: 2rem; }
+  @media (min-width: 820px) {
     .lexicon-group {
-      margin-bottom: 6rem; } }
+      margin-bottom: 5rem; } }
   .lexicon-group .lexicon-group__number {
     display: none; }
     @media (min-width: 1200px) {
@@ -840,12 +842,14 @@ figure.figure-embed {
   text-decoration: none;
   color: white;
   float: left;
-  margin-bottom: 2rem;
-  margin-right: 2rem; }
-  @media (min-width: 600px) {
+  margin-bottom: 1rem;
+  margin-right: 1rem; }
+  @media (min-width: 820px) {
     .lexicon-list a {
       margin-bottom: 3rem;
-      margin-right: 3rem; } }
+      margin-right: 3rem; }
+      .lexicon-list a:nth-child(4n) {
+        margin-right: 0; } }
   .lexicon-list a:hover .lexicon-list__item {
     background-color: #ff8b1e; }
 
@@ -854,8 +858,8 @@ figure.figure-embed {
   padding: 1.5rem;
   background: #005c8d;
   color: white;
-  height: 15rem;
-  width: 16.75rem;
+  height: 10rem;
+  width: 13.75rem;
   display: flex;
   align-items: flex-end;
   flex-flow: column;
@@ -866,6 +870,10 @@ figure.figure-embed {
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto; }
+  @media (min-width: 820px) {
+    .lexicon-list .lexicon-list__item {
+      height: 15rem;
+      width: 16.74rem; } }
   .lexicon-list .lexicon-list__item.type-stof {
     background: #00d79a; }
   .lexicon-list .lexicon-list__item.type-alias {
@@ -880,13 +888,20 @@ figure.figure-embed {
   margin-top: auto;
   text-transform: uppercase;
   line-height: 1.15em;
-  margin-bottom: .5rem; }
+  margin-bottom: .5rem;
+  font-size: 1.3rem; }
+  @media (min-width: 820px) {
+    .lexicon-list .lexicon-list__type {
+      font-size: 1.6rem; } }
 
 .lexicon-list .lexicon-list__title {
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   line-height: 1.15em;
   width: 100%; }
+  @media (min-width: 820px) {
+    .lexicon-list .lexicon-list__title {
+      font-size: 2.2rem; } }
 
 .toc {
   background: #005c8d;
