@@ -35,7 +35,7 @@
 <a data-colorbox-inline=".overlay__item.media-{{ media.id }}" data-width="720">
   <div{{ attributes }}>
 
-    <div class="grid-item__background">
+    <div class="grid-item__background color-{{ content.field_bg_color[0] }}">
       {% if content.field_video_image %}
         {{ content.field_video_image }}
       {% endif %}

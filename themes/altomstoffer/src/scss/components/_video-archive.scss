@@ -193,5 +193,15 @@
       transition: all 200ms;
       transition-delay: 0
     }
+
+    &.color-orange {
+      background: $color-orange;
+    }
+    &.color-cyan {
+      background: $color-green;
+    }
+    &.color-blue {
+      background: $color-blue;
+    }
   }
 }

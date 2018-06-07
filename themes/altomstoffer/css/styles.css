@@ -1446,6 +1446,12 @@ figure.figure-embed {
       transform: scale(1);
       transition: all 200ms;
       transition-delay: 0; } }
+  .video--archive .grid-item__background.color-orange {
+    background: #ff8b1e; }
+  .video--archive .grid-item__background.color-cyan {
+    background: #00d79a; }
+  .video--archive .grid-item__background.color-blue {
+    background: #005c8d; }
 
 .overlay-video {
   position: relative;
