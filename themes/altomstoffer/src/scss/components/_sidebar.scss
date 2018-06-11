@@ -1,4 +1,10 @@
 .region-sidebar {
 
+  img {
+    max-width: 20rem;
+  }
 
+  @include bp-normal {
+    max-width: 100%;
+  }
 }

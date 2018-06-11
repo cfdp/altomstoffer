@@ -165,8 +165,24 @@
       @include hyphenate();
       @include clearfix();
 
+      .field__label {
+        @include bp-normal {
+          font-size: 1.2rem;
+        }
+        @include bp-wide {
+          font-size: $font-size-base;
+        }     
+      }
+
       .field__item {
         display: inline-block;
+        
+        @include bp-normal {
+          font-size: 1.2rem;
+        }
+        @include bp-wide {
+          font-size: $font-size-base;
+        }
       }
       .field__item:after {
         content: ",";

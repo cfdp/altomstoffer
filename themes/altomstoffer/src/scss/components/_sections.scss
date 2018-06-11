@@ -6,7 +6,7 @@
     .section__number {
       display: none;
 
-      @include bp-normal {
+      @include bp-wide {
         display: block;
         font-size: 15rem;
         position: absolute;

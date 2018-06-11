@@ -1100,7 +1100,7 @@ figure.figure-embed {
   padding: 6rem 3rem; }
   .sections .sections__item .section__number {
     display: none; }
-    @media (min-width: 820px) {
+    @media (min-width: 1200px) {
       .sections .sections__item .section__number {
         display: block;
         font-size: 15rem;
@@ -1865,8 +1865,20 @@ figure.figure-embed {
     content: "";
     display: table;
     clear: both; }
+  @media (min-width: 820px) {
+    .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__label {
+      font-size: 1.2rem; } }
+  @media (min-width: 1200px) {
+    .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__label {
+      font-size: 1.6rem; } }
   .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__item {
     display: inline-block; }
+    @media (min-width: 820px) {
+      .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__item {
+        font-size: 1.2rem; } }
+    @media (min-width: 1200px) {
+      .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__item {
+        font-size: 1.6rem; } }
   .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__item:after {
     content: ","; }
   .landing-grid .bundle-lexicon-article .field--name-field-lexicon-aliases .field__item:last-child:after {
@@ -1977,6 +1989,13 @@ figure.figure-embed {
           fill: white;
           width: 2.5rem;
           height: 2.5rem; } }
+
+.region-sidebar img {
+  max-width: 20rem; }
+
+@media (min-width: 820px) {
+  .region-sidebar {
+    max-width: 100%; } }
 
 #typed {
   display: inline; }
