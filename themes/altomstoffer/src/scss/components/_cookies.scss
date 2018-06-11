@@ -1,0 +1,52 @@
+
+.cc_banner {
+
+  padding: 2.5rem 3rem;
+
+  .cc_inner {
+    margin: auto;
+    position: relative;
+
+    @include bp-normal {
+      max-width: 1140px;
+      height: 3rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .cc_message {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: $font-size-base;
+    color: $text-color;
+
+    a {
+      color: $link-color;
+      text-decoration: underline;
+    }
+  }
+
+  .button {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: $font-size-base;
+    @include button($color-orange);
+    font-weight: $font-weight-bold;
+
+
+    &:hover {
+      color: white;
+    }
+
+    @include bp-normal {
+      margin-top: 0;
+      margin-left: 1rem;
+      position: absolute;
+      top: -1rem;
+      right: 0;
+    }
+  }
+}

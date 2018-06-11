@@ -2032,6 +2032,65 @@ figure.figure-embed {
 .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
   border-top-color: #005c8d; }
 
+.cc_banner {
+  padding: 2.5rem 3rem; }
+  .cc_banner .cc_inner {
+    margin: auto;
+    position: relative; }
+    @media (min-width: 820px) {
+      .cc_banner .cc_inner {
+        max-width: 1140px;
+        height: 3rem;
+        line-height: 2.5rem; } }
+  .cc_banner .cc_message {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: #54585d; }
+    .cc_banner .cc_message a {
+      color: #ff8b1e;
+      text-decoration: underline; }
+  .cc_banner .button {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.6rem;
+    background: #ff8b1e;
+    color: white;
+    border-bottom: 2px solid #ea7100;
+    padding: 1.5rem 2.5rem;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    line-height: 1;
+    font-weight: 700; }
+    .cc_banner .button:hover {
+      text-decoration: none; }
+      .cc_banner .button:hover svg {
+        transform: translate3d(5px, 0, 0); }
+    .cc_banner .button:active {
+      top: 2px;
+      border-bottom-color: transparent; }
+    .cc_banner .button svg {
+      fill: white;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin: 0 0 0 1.5rem;
+      transform: translate3d(0, 0, 0);
+      transition: transform 150ms; }
+    .cc_banner .button:hover {
+      color: white; }
+    @media (min-width: 820px) {
+      .cc_banner .button {
+        margin-top: 0;
+        margin-left: 1rem;
+        position: absolute;
+        top: -1rem;
+        right: 0; } }
+
 .embedded-entity.bundle-basic h3 {
   color: white;
   margin-bottom: 2rem; }
