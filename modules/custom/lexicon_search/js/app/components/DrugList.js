@@ -45,11 +45,13 @@ class DrugList extends Component {
       allDrugs.push(drugPrim);
       const aliases = drugs[i].aliases.split(",");
       aliases.forEach(function(alias) {
-        const drugSec = [];
-        drugSec.nid = drugs[i].nid;
-        drugSec.title = alias.trim().substring(0, 20);
-        drugSec.type = 'alias';
-        allDrugs.push(drugSec);
+        if(alias != '') {
+          const drugSec = [];
+          drugSec.nid = drugs[i].nid;
+          drugSec.title = alias.trim().substring(0, 20);
+          drugSec.type = 'alias';
+          allDrugs.push(drugSec);
+        }
       });
     }
     return allDrugs;
