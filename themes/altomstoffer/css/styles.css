@@ -1090,6 +1090,7 @@ figure.figure-embed {
       z-index: 100;
       float: right;
       margin-top: 6rem;
+      margin-bottom: 6rem;
       width: 36rem;
       padding: 4rem 4rem 6.5rem;
       opacity: 1;

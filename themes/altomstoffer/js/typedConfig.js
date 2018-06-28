@@ -2,9 +2,7 @@
 
   Drupal.behaviors.typedJs = {
     attach: function (context, settings) {
-
       $('#typed-strings', context).once('typedString').each(function() {
-  
         var typed = new Typed('#typed', {
           stringsElement: '#typed-strings',
           loop: true,
@@ -12,7 +10,6 @@
           backSpeed: 70,
           backDelay: 1400,
         });
-
       });
     }
   }
