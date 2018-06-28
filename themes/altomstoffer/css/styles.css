@@ -566,13 +566,14 @@ body.page-node-type-landing-page .layout-content {
   font-weight: 900;
   font-size: 2.6rem;
   margin-bottom: 4rem;
-  transition: margin 100ms ease-in-out;
   text-align: center; }
   @media (min-width: 820px) {
     .navigation.menu--main li {
-      text-align: left; } }
-  .navigation.menu--main li:hover {
-    margin-left: 5px; }
+      text-align: left;
+      transition: margin 100ms ease-in-out; } }
+  @media (min-width: 820px) {
+    .navigation.menu--main li:hover {
+      margin-left: 5px; } }
 
 .navigation.menu--main a {
   color: white;

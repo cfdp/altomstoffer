@@ -16,6 +16,12 @@
         $(this).toggleClass('active');
         $('.toc--float').toggleClass('active');
       });
+
+      $(".toc__title a").click(function (e) {
+        e.preventDefault();
+        $('.toc-toggle').removeClass('active');
+        $('.toc--float').removeClass('active');
+      });
     }
   };
 
