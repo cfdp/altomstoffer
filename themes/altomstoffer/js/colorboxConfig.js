@@ -2,7 +2,7 @@
 
   drupalSettings.colorbox.opacity = 0.50;
   drupalSettings.colorbox.maxHeight = '75%';
-  drupalSettings.colorbox.maxWidth = '90%';
+  drupalSettings.colorbox.maxWidth = '720';
 
   //Configure colorbox call back to resize with custom dimensions 
   $.colorbox.settings.onLoad = function () {

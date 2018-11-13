@@ -88,6 +88,12 @@
       cursor: pointer;
     }
 
+    .ajax-progress {
+      position: absolute;
+      right: 0;
+      bottom: 1rem;
+    }
+
     img {
       position: relative;
       float: left;
@@ -160,14 +166,14 @@
   .field--name-field-tags {
     margin-top: 2rem;
     @include clearfix();
-    
+
     .field__item {
       float: left;
       border: 2px solid $color-orange;
       padding: 0.5rem 1rem;
       font-size: $font-size-small;
       text-transform: uppercase;
-      margin-right: .75rem;
+      margin: 0 .75rem .5rem 0;
       color: $text-color-dark;
       transition: all 250ms;
       cursor: pointer;

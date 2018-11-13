@@ -32,7 +32,7 @@
  */
 #}
 
-<a data-colorbox-inline=".overlay__item.media-{{ media.id }}" data-width="720">
+<a href="/media/{{ media.id }}" class="use-ajax" data-dialog-type="colorbox">
   <div{{ attributes }}>
 
     <div class="grid-item__background color-{{ content.field_bg_color[0] }}">
